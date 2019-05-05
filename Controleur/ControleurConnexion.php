@@ -30,12 +30,12 @@ class ControleurConnexion extends Controleur
             $mail = $this->requete->getParametre("mail");
             $mdp = $this->requete->getParametre("mdp");
             if ($this->utilisateur->connecter($mail, $mdp)) {
-                $utilisateur = $this->utilisateur->getUtilisateur($mail, $mdp);
+                $utilisateur = $this->utilisateur->getUser($mail, $mdp);
                 $this->requete->getSession()->setAttribut("idUtilisateur",
                         $utilisateur['idUtilisateur']);
                 $this->requete->getSession()->setAttribut("mail",
                         $utilisateur['mail']);
-                $this->rediriger("test");
+                $this->rediriger("accueil");
             }
             else
                 $this->genererVue(array('msgErreur' => 'Login ou mot de passe incorrects'),

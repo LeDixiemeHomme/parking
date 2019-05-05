@@ -12,9 +12,9 @@ require_once 'Framework/Modele.php';
 class Utilisateur extends Modele {
 
     public function connecter($mail, $mdp) {
-        $mdp_h = $this->hacher($mdp);
+        //$mdp_h = $this->hacher($mdp);
         $sql = 'select id_u from users where mail=? and mdp=?';
-        $util = $this->executerRequete($sql, array($mail, $mdp_h));
+        $util = $this->executerRequete($sql, array($mail, $mdp));
         return ($util->rowCount() == 1);
     }
 

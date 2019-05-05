@@ -10,7 +10,7 @@
         <div id="global">
             <header>
                 <a href=""><h1 id="titreBlog">Mon Blog</h1></a>
-                <p>Je vous souhaite la bienvenue sur ce modeste blog.</p>
+                <p>Site de gestion de places de parking.</p>
             </header>
             <div id="contenu">
                 <?= $contenu ?>

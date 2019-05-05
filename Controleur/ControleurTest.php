@@ -19,7 +19,7 @@ class ControleurTest extends ControleurSecurise {
 
     public function index()
     {
-        // TODO: Implement index() method.
+        $this->genererVue();
     }
 
 }
