@@ -26,15 +26,18 @@ class ControleurConnexion extends Controleur
 
     public function connecter()
     {
-        if ($this->requete->existeParametre("mail") && $this->requete->existeParametre("mdp")) {
+        if ($this->requete->existeParametre("mail") && $this->requete->existeParametre("mdp_h")) {
             $mail = $this->requete->getParametre("mail");
-            $mdp = $this->requete->getParametre("mdp");
-            if ($this->utilisateur->connecter($mail, $mdp)) {
-                $utilisateur = $this->utilisateur->getUser($mail, $mdp);
-                $this->requete->getSession()->setAttribut("idUtilisateur",
-                        $utilisateur['idUtilisateur']);
-                $this->requete->getSession()->setAttribut("mail",
-                        $utilisateur['mail']);
+            $mdp_h = $this->requete->getParametre("mdp_h");
+            if ($this->utilisateur->connecter($mail, $mdp_h)) {
+                $utilisateur = $this->utilisateur->getUser($mail, $mdp_h);
+                $this->requete->getSession()->setAttribut("connecte", true);
+                $this->requete->getSession()->setAttribut("mail", $utilisateur['mail']);
+                $this->requete->getSession()->setAttribut("id_u", $utilisateur['id_u']);
+                $this->requete->getSession()->setAttribut("nom", $utilisateur['nom']);
+                $this->requete->getSession()->setAttribut("prenom", $utilisateur['prenom']);
+                $this->requete->getSession()->setAttribut("etat_u", $utilisateur['etat_u']);
+                $this->requete->getSession()->setAttribut("niveau", $utilisateur['niveau']);
                 $this->rediriger("accueil");
             }
             else

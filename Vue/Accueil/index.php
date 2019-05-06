@@ -1,4 +1,4 @@
-<?php $this->titre = "Mon Parking";
+<?php $this->titre = "Accueil";
 
 /**
  * Created by PhpStorm.
@@ -7,21 +7,14 @@
  * Time: 23:12
  */
 
-?> <a href="connexion">Se connecter</a>
+?>
+    <h3>
+        <?php var_dump($_SESSION);?>
+    </h3>
 
-    <h1>
-        <?php var_dump($_SESSION); ?>
-    </h1>
-<?php
 
-foreach ($users as $user)
+<?php foreach ($places as $place)
 {
-    var_dump($user['mdp']);
-    echo '<br><br>';
-    ?>
-    <a href="<?= "test/index/" . $this->nettoyer($user['mdp']) ?>">
-        <h1 class="titreBillet"><?= $this->nettoyer($user['nom']) ?></h1>
-    </a>
-    <a href="test/index">zdazd</a>
-    <?php
+    echo $place['num_p'];
+    echo "<br>";
 }

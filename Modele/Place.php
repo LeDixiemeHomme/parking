@@ -17,4 +17,42 @@ class Place extends Modele {
         return $places;
     }
 
+    public function getPlace($idPlace) {
+        $sql = 'select * from place where id_p=?';
+        $place = $this->executerRequete($sql, array($idPlace));
+        if ($place->rowCount() > 0)
+            return $place->fetch();
+        else
+            throw new Exception("Aucune place ne correspond à l'identifiant '$idPlace'");
+    }
+
+    public function getPlacesLibres() {
+        $sql = 'select * from place where etat_p = 1';
+        $places = $this->executerRequete($sql);
+        return $places;
+    }
+
+    public function getPlacesOccupees() {
+        $sql = 'select * from place where etat_p = 2';
+        $places = $this->executerRequete($sql);
+        return $places;
+    }
+
+    public function getNbPlaces() {
+        $sql = 'select count(*) as nbPlaces from place';
+        $resultat = $this->executerRequete($sql);
+        $ligne = $resultat->fetch();
+        return $ligne['nbPlaces'];
+    }
+
+    public function setEtat($etat_p, $id_p){
+        $sql = 'UPDATE place SET etat_p = ? WHERE id_p = ?';
+        $place = $this->executerRequete($sql, array($etat_p, $id_p));
+    }
+
+    public function setNum($num_p,$id_p) {
+        $sql = 'UPDATE place SET num_p = ? WHERE id_p = ?';
+        $place = $this->executerRequete($sql, array($num_p, $id_p));
+    }
+
 }

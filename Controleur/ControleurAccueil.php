@@ -2,6 +2,7 @@
 
 require_once 'Framework/Controleur.php';
 require_once 'Modele/Utilisateur.php';
+require_once 'Modele/Place.php';
 
 /**
  * Created by PhpStorm.
@@ -13,15 +14,19 @@ require_once 'Modele/Utilisateur.php';
 class ControleurAccueil extends Controleur {
 
     private $users;
+    private $places;
 
     public function __construct() {
         $this->users = new Utilisateur();
+        $this->places = new Place();
     }
 
     public function index()
     {
+        $this->places->setEtat(2,1);
         $user = $this->users->getUsers();
-        $this->genererVue(array('users' => $user));
+        $places = $this->places->getPlacesOccupees();
+        $this->genererVue(array('users' => $user , 'places' => $places));
     }
 
 }

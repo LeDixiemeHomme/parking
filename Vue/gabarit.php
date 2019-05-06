@@ -1,23 +1,9 @@
-<!doctype html>
-<html lang="fr">
-    <head>
-        <meta charset="UTF-8" />
-        <base href="<?= $racineWeb ?>" >
-        <link rel="stylesheet" href="Contenu/style.css" />
-        <title><?= $titre ?></title>
-    </head>
-    <body>
-        <div id="global">
-            <header>
-                <a href=""><h1 id="titreBlog">Mon Blog</h1></a>
-                <p>Site de gestion de places de parking.</p>
-            </header>
+
+
+<?php require_once 'header.php';?>
+
             <div id="contenu">
                 <?= $contenu ?>
             </div> <!-- #contenu -->
-            <footer id="piedBlog">
-                Blog réalisé avec PHP, HTML5 et CSS.
-            </footer>
-        </div> <!-- #global -->
-    </body>
-</html>
+
+<?php require_once 'footer.php';?>

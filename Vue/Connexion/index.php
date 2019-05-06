@@ -4,7 +4,7 @@
 
 <form action="connexion/connecter" method="post">
     <input name="mail" type="text" placeholder="Entrez votre mail" required autofocus>
-    <input name="mdp" type="password" placeholder="Entrez votre mot de passe" required>
+    <input name="mdp_h" type="password" placeholder="Entrez votre mot de passe" required>
     <button type="submit">Connexion</button>
 </form>
 

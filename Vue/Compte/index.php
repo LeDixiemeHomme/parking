@@ -1,4 +1,4 @@
-<?php
+<?php $this->titre = "Mon compte";
 /**
  * Created by PhpStorm.
  * User: benoi
@@ -6,11 +6,15 @@
  * Time: 21:27
  */
 
-/*
 foreach ($places as $place)
 {
-    var_dump($place['num_p']);
+    echo $place['num_p'];
     echo '<br><br>';
-    ?>
 }
-*/
+
+foreach ($reservations as $reservation)
+{
+    echo $reservation.'<br>';
+}
+
+var_dump($val);

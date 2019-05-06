@@ -12,9 +12,9 @@ require_once 'Framework/Modele.php';
 class Utilisateur extends Modele {
 
     public function connecter($mail, $mdp) {
-        //$mdp_h = $this->hacher($mdp);
-        $sql = 'select id_u from users where mail=? and mdp=?';
-        $util = $this->executerRequete($sql, array($mail, $mdp));
+        $mdp_h = $this->hacher($mdp);
+        $sql = 'select id_u from users where mail = ? and mdp = ?';
+        $util = $this->executerRequete($sql, array($mail, $mdp_h));
         return ($util->rowCount() == 1);
     }
 
@@ -31,9 +31,10 @@ class Utilisateur extends Modele {
     }
 
     public function getUser($mail, $mdp) {
+        $mdp_h = $this->hacher($mdp);
         $sql = 'select id_u, nom, prenom, mail, mdp, niveau, etat_u 
                 from users where mail=? and mdp=?';
-        $util = $this->executerRequete($sql, array($mail, $mdp));
+        $util = $this->executerRequete($sql, array($mail, $mdp_h));
         if ($util->rowCount() == 1)
             return $util->fetch();  // Accès à la première ligne de résultat
         else
