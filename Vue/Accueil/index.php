@@ -8,13 +8,5 @@
  */
 
 ?>
-    <h3>
-        <?php var_dump($_SESSION);?>
-    </h3>
 
-
-<?php foreach ($places as $place)
-{
-    echo $place['num_p'];
-    echo "<br>";
-}
+<h1>Accueil</h1>

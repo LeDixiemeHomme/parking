@@ -30,7 +30,16 @@ class Utilisateur extends Modele {
         return $util;
     }
 
-    public function getUser($mail, $mdp) {
+    public function getUser($idUser) {
+        $sql = 'select * from users where id_u = ?';
+        $user = $this->executerRequete($sql, array($idUser));
+        if ($user->rowCount() > 0)
+            return $user->fetch();
+        else
+            throw new Exception("Aucune place ne correspond à l'identifiant '$idUser'");
+    }
+
+    public function confirmeUser($mail, $mdp) {
         $mdp_h = $this->hacher($mdp);
         $sql = 'select id_u, nom, prenom, mail, mdp, niveau, etat_u 
                 from users where mail=? and mdp=?';

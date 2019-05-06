@@ -25,9 +25,10 @@ class ControleurCompte extends Controleur {
     public function index()
     {
         $places = $this->place->getPlaces();
-        $reservation = $this->reservation->getReservation(1);
+        $utilisateur = $this->users->getUser($_SESSION['id_u']);
+        $reservation = $this->reservation->getReservationsUser($_SESSION['id_u']);
         $vali = $this->reservation->getValidite(2);
-        $this->genererVue(array('places' => $places , 'reservations' => $reservation , 'val' => $vali));
+        $this->genererVue(array('places' => $places , 'reservations' => $reservation , 'val' => $vali , 'uti' => $utilisateur));
     }
 
 }

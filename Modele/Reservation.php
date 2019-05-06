@@ -27,7 +27,7 @@ class Reservation extends Modele {
         $sql = 'select * from reservation where id_u = ?';
         $resa = $this->executerRequete($sql, array($idUser));
         if ($resa->rowCount() > 0)
-            return $resa->fetch();
+            return $resa;
         else
             throw new Exception("Aucune reservation ne correspond à l'identifiant '$idUser'");
     }
@@ -36,7 +36,7 @@ class Reservation extends Modele {
         $sql = 'select * from reservation where id_u = ?';
         $resa = $this->executerRequete($sql, array($idPlace));
         if ($resa->rowCount() > 0)
-            return $resa->fetch();
+            return $resa;
         else
             throw new Exception("Aucune reservation ne correspond à l'identifiant '$idPlace'");
     }

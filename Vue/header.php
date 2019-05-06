@@ -22,23 +22,29 @@
 <body>
 <div id="global">
     <header>
-        <a href=""><h1>Site de gestion de parking</h1></a>
-        <nav>
-            <ul>
-                <?php
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <?php
                     if(isset($_SESSION['connecte']))
-                        {
-                            echo '<li><p><a href="compte">Acceder à mon compte</a></p></li>';
-                            echo '<li><p><a href="connexion/deconnecter">Se déconnecter</a></p></li>';
-                        }
-                    else
-                        {
-                            echo '<li><p><a href="connexion">Se connecter</a></p></li>';
-                            echo '<li><p><a href="inscription">S\'inscrire</a></p></li>';
-                        }
-                ?>
-            </ul>
-        </nav>
+                        { echo '
+                        <li class="nav-item"><a class="nav-link" href="compte">Compte</a></li>
+                        <li class="nav-item"><a class="nav-link" href="connexion/deconnecter">Se déconnecter</a></li>
+                        ' ; }
+                    else { echo '
+                        <li class="nav-item"><a class="nav-link" href="connexion">Se connecter</a></li>
+                        <li class="nav-item"><a class="nav-link" href="inscription">S\'inscrire</a></li>
+                        '; } ?>
+                </div>
+            </nav>
+
+            <a href=""><h1>Site de gestion de parking</h1></a>
+
     </header>
 
 

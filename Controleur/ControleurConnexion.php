@@ -30,7 +30,7 @@ class ControleurConnexion extends Controleur
             $mail = $this->requete->getParametre("mail");
             $mdp_h = $this->requete->getParametre("mdp_h");
             if ($this->utilisateur->connecter($mail, $mdp_h)) {
-                $utilisateur = $this->utilisateur->getUser($mail, $mdp_h);
+                $utilisateur = $this->utilisateur->confirmeUser($mail, $mdp_h);
                 $this->requete->getSession()->setAttribut("connecte", true);
                 $this->requete->getSession()->setAttribut("mail", $utilisateur['mail']);
                 $this->requete->getSession()->setAttribut("id_u", $utilisateur['id_u']);
