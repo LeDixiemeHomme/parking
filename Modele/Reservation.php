@@ -43,16 +43,7 @@ class Reservation extends Modele {
 
     public function getValidite($idResa) {
         $resa = $this->getReservation($idResa);
-        if ($resa['date_debut'] < $resa['date_fin']) {
-            $validite = true;
-        }
-        elseif ($resa['date_fin'] < $resa['date_debut'] ) {
-            $validite = false;
-        }
-        else {
-            throw new Exception("Aucune reservation ne correspond à l'identifiant '$idResa'");
-        }
-        return $validite;
+        return ($resa['date_debut'] < $resa['date_fin']);
     }
 
 

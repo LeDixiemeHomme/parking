@@ -26,7 +26,7 @@ class ControleurCompte extends Controleur {
     {
         $places = $this->place->getPlaces();
         $reservation = $this->reservation->getReservation(1);
-        $vali = $this->reservation->getValidite(1);
+        $vali = $this->reservation->getValidite(2);
         $this->genererVue(array('places' => $places , 'reservations' => $reservation , 'val' => $vali));
     }
 

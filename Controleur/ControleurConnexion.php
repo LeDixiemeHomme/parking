@@ -36,8 +36,6 @@ class ControleurConnexion extends Controleur
                 $this->requete->getSession()->setAttribut("id_u", $utilisateur['id_u']);
                 $this->requete->getSession()->setAttribut("nom", $utilisateur['nom']);
                 $this->requete->getSession()->setAttribut("prenom", $utilisateur['prenom']);
-                $this->requete->getSession()->setAttribut("etat_u", $utilisateur['etat_u']);
-                $this->requete->getSession()->setAttribut("niveau", $utilisateur['niveau']);
                 $this->rediriger("accueil");
             }
             else

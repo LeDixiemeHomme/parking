@@ -34,6 +34,7 @@
                     else
                         {
                             echo '<li><p><a href="connexion">Se connecter</a></p></li>';
+                            echo '<li><p><a href="inscription">S\'inscrire</a></p></li>';
                         }
                 ?>
             </ul>
