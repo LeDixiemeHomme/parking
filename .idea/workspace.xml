@@ -1,7 +1,390 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ad778458-6614-494d-8805-fd7d0d80db91" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../COURS/INTERNET/bpesquet/auth/MonBlog/Config/dev.ini" beforeDir="false" afterPath="$PROJECT_DIR$/../../../COURS/INTERNET/bpesquet/auth/MonBlog/Config/dev.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../COURS/INTERNET/bpesquet/auth/MonBlog/Vue/Accueil/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../COURS/INTERNET/bpesquet/auth/MonBlog/Vue/Accueil/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../COURS/INTERNET/bpesquet/auth/MonBlog/Vue/Admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../COURS/INTERNET/bpesquet/auth/MonBlog/Vue/Admin/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../COURS/INTERNET/bpesquet/auth/MonBlog/Vue/gabarit.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../COURS/INTERNET/bpesquet/auth/MonBlog/Vue/gabarit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Parking_BTS.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Parking_BTS.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Contenu/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Contenu/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controleur/ControleurAccueil.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controleur/ControleurAccueil.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controleur/ControleurCompte.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controleur/ControleurCompte.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modele/Reservation.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modele/Reservation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modele/Utilisateur.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modele/Utilisateur.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue/Accueil/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vue/Accueil/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue/Compte/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vue/Compte/index.php" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Modele/Place.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="50" column="5" lean-forward="true" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
+              <folding>
+                <element signature="e#45#133#0#PHP" />
+                <element signature="n#getPlaces#0;n#Place#0;n#!!top" />
+                <element signature="n#getPlace#0;n#Place#0;n#!!top" />
+                <element signature="n#getPlacesLibres#0;n#Place#0;n#!!top" />
+                <element signature="n#getPlacesOccupees#0;n#Place#0;n#!!top" />
+                <element signature="n#getNbPlaces#0;n#Place#0;n#!!top" />
+                <element signature="n#setEtat#0;n#Place#0;n#!!top" />
+                <element signature="n#setNum#0;n#Place#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Modele/Reservation.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="254">
+              <caret line="81" column="43" selection-start-line="81" selection-start-column="43" selection-end-line="81" selection-end-column="43" />
+              <folding>
+                <element signature="n#getReservations#0;n#Reservation#0;n#!!top" />
+                <element signature="n#getReservation#0;n#Reservation#0;n#!!top" />
+                <element signature="n#getReservationsUser#0;n#Reservation#0;n#!!top" />
+                <element signature="n#getReservationsPlace#0;n#Reservation#0;n#!!top" />
+                <element signature="n#getUserfromReservation#0;n#Reservation#0;n#!!top" />
+                <element signature="n#getPlacefromReservation#0;n#Reservation#0;n#!!top" />
+                <element signature="n#getReservation#1;n#Reservation#0;n#!!top" />
+                <element signature="n#getReservationEnCours#1;n#Reservation#0;n#!!top" />
+                <element signature="n#setDateFin#0;n#Reservation#0;n#!!top" />
+                <element signature="n#set#0;n#Reservation#0;n#!!top" />
+                <element signature="n#setDateResa#0;n#Reservation#0;n#!!top" />
+                <element signature="n#setIdPlace#0;n#Reservation#0;n#!!top" />
+                <element signature="n#setIdUser#0;n#Reservation#0;n#!!top" />
+                <element signature="n#addReservation#0;n#Reservation#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Vue/Accueil/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+              <folding>
+                <element signature="e#33#121#0#PHP" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Controleur/ControleurAccueil.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="30" column="64" selection-start-line="30" selection-start-column="64" selection-end-line="30" selection-end-column="64" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Modele/Utilisateur.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="529">
+              <caret line="86" column="5" selection-start-line="86" selection-start-column="5" selection-end-line="86" selection-end-column="5" />
+              <folding>
+                <element signature="n#getUsers#0;n#Utilisateur#0;n#!!top" />
+                <element signature="n#getUser#0;n#Utilisateur#0;n#!!top" />
+                <element signature="n#setEtat#0;n#Utilisateur#0;n#!!top" />
+                <element signature="n#setEtat#1;n#Utilisateur#0;n#!!top" />
+                <element signature="n#setNiveau#1;n#Utilisateur#0;n#!!top" />
+                <element signature="n#setNiveau#2;n#Utilisateur#0;n#!!top" />
+                <element signature="n#setNiveau#3;n#Utilisateur#0;n#!!top" />
+                <element signature="n#setMdp#0;n#Utilisateur#0;n#!!top" />
+                <element signature="n#connecter#0;n#Utilisateur#0;n#!!top" />
+                <element signature="n#inscription#0;n#Utilisateur#0;n#!!top" />
+                <element signature="n#confirmeUser#0;n#Utilisateur#0;n#!!top" />
+                <element signature="n#hacher#0;n#Utilisateur#0;n#!!top" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Controleur/ControleurCompte.php" />
+        <option value="$PROJECT_DIR$/Contenu/style.css" />
+        <option value="$PROJECT_DIR$/Vue/Compte/index.php" />
+        <option value="$PROJECT_DIR$/Modele/Utilisateur.php" />
+        <option value="$PROJECT_DIR$/Vue/Accueil/index.php" />
+        <option value="$PROJECT_DIR$/Controleur/ControleurAccueil.php" />
+        <option value="$PROJECT_DIR$/Modele/Reservation.php" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpServers">
+    <servers />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="391" />
+    <option name="y" value="-11" />
+    <option name="width" value="653" />
+    <option name="height" value="455" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Parking_BTS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Parking_BTS" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Parking_BTS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Parking_BTS" type="462c0819:PsiDirectoryNode" />
+              <item name="Controleur" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Parking_BTS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Parking_BTS" type="462c0819:PsiDirectoryNode" />
+              <item name="Modele" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Parking_BTS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Parking_BTS" type="462c0819:PsiDirectoryNode" />
+              <item name="Vue" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Parking_BTS" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Parking_BTS" type="462c0819:PsiDirectoryNode" />
+              <item name="Vue" type="462c0819:PsiDirectoryNode" />
+              <item name="Accueil" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
   <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../COURS/INTERNET/bpesquet/auth/MonBlog" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ad778458-6614-494d-8805-fd7d0d80db91" name="Default Changelist" comment="" />
+      <created>1557166915411</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1557166915411</updated>
+      <workItem from="1557166916963" duration="22972000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="22972000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Favorites" order="0" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.17246597" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="0" />
+      <window_info anchor="bottom" id="Database Changes" order="1" />
+      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="3" />
+      <window_info anchor="bottom" id="Docker" order="4" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Message" order="5" />
+      <window_info anchor="bottom" id="Find" order="6" />
+      <window_info anchor="bottom" id="Run" order="7" />
+      <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="11" />
+      <window_info anchor="right" id="Database" order="0" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Controleur/ControleurConnexion.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="28" column="93" selection-start-line="28" selection-start-column="88" selection-end-line="28" selection-end-column="93" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../../Java/inscriptionsSportives/InscriptionsSportives/src/hibernate/AccesBDDpackage/AccesBDD.cfg.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="53" lean-forward="true" selection-start-line="10" selection-start-column="50" selection-end-line="10" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Contenu/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="461">
+          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="31" column="51" lean-forward="true" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue/Compte/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+          <folding>
+            <element signature="e#36#117#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controleur/ControleurAdminSecurise.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../COURS/INTERNET/bpesquet/auth/MonBlog/Modele/Commentaire.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-202" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../COURS/INTERNET/bpesquet/auth/MonBlog/Modele/Billet.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="35" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../COURS/INTERNET/bpesquet/auth/MonBlog/Controleur/ControleurAccueil.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controleur/ControleurCompte.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="61" lean-forward="true" selection-start-line="61" selection-end-line="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modele/Utilisateur.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="86" column="5" selection-start-line="86" selection-start-column="5" selection-end-line="86" selection-end-column="5" />
+          <folding>
+            <element signature="n#getUsers#0;n#Utilisateur#0;n#!!top" />
+            <element signature="n#getUser#0;n#Utilisateur#0;n#!!top" />
+            <element signature="n#setEtat#0;n#Utilisateur#0;n#!!top" />
+            <element signature="n#setEtat#1;n#Utilisateur#0;n#!!top" />
+            <element signature="n#setNiveau#1;n#Utilisateur#0;n#!!top" />
+            <element signature="n#setNiveau#2;n#Utilisateur#0;n#!!top" />
+            <element signature="n#setNiveau#3;n#Utilisateur#0;n#!!top" />
+            <element signature="n#setMdp#0;n#Utilisateur#0;n#!!top" />
+            <element signature="n#connecter#0;n#Utilisateur#0;n#!!top" />
+            <element signature="n#inscription#0;n#Utilisateur#0;n#!!top" />
+            <element signature="n#confirmeUser#0;n#Utilisateur#0;n#!!top" />
+            <element signature="n#hacher#0;n#Utilisateur#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modele/Place.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="50" column="5" lean-forward="true" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
+          <folding>
+            <element signature="e#45#133#0#PHP" />
+            <element signature="n#getPlaces#0;n#Place#0;n#!!top" />
+            <element signature="n#getPlace#0;n#Place#0;n#!!top" />
+            <element signature="n#getPlacesLibres#0;n#Place#0;n#!!top" />
+            <element signature="n#getPlacesOccupees#0;n#Place#0;n#!!top" />
+            <element signature="n#getNbPlaces#0;n#Place#0;n#!!top" />
+            <element signature="n#setEtat#0;n#Place#0;n#!!top" />
+            <element signature="n#setNum#0;n#Place#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue/Accueil/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="e#33#121#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controleur/ControleurAccueil.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="64" selection-start-line="30" selection-start-column="64" selection-end-line="30" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modele/Reservation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="81" column="43" selection-start-line="81" selection-start-column="43" selection-end-line="81" selection-end-column="43" />
+          <folding>
+            <element signature="n#getReservations#0;n#Reservation#0;n#!!top" />
+            <element signature="n#getReservation#0;n#Reservation#0;n#!!top" />
+            <element signature="n#getReservationsUser#0;n#Reservation#0;n#!!top" />
+            <element signature="n#getReservationsPlace#0;n#Reservation#0;n#!!top" />
+            <element signature="n#getUserfromReservation#0;n#Reservation#0;n#!!top" />
+            <element signature="n#getPlacefromReservation#0;n#Reservation#0;n#!!top" />
+            <element signature="n#getReservation#1;n#Reservation#0;n#!!top" />
+            <element signature="n#getReservationEnCours#1;n#Reservation#0;n#!!top" />
+            <element signature="n#setDateFin#0;n#Reservation#0;n#!!top" />
+            <element signature="n#set#0;n#Reservation#0;n#!!top" />
+            <element signature="n#setDateResa#0;n#Reservation#0;n#!!top" />
+            <element signature="n#setIdPlace#0;n#Reservation#0;n#!!top" />
+            <element signature="n#setIdUser#0;n#Reservation#0;n#!!top" />
+            <element signature="n#addReservation#0;n#Reservation#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>

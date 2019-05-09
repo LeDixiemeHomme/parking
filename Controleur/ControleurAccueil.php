@@ -3,6 +3,7 @@
 require_once 'Framework/Controleur.php';
 require_once 'Modele/Utilisateur.php';
 require_once 'Modele/Place.php';
+require_once 'Modele/Reservation.php';
 
 /**
  * Created by PhpStorm.
@@ -14,19 +15,20 @@ require_once 'Modele/Place.php';
 class ControleurAccueil extends Controleur {
 
     private $users;
-    private $places;
+    private $place;
+    private $reservation;
 
     public function __construct() {
         $this->users = new Utilisateur();
-        $this->places = new Place();
+        $this->place = new Place();
+        $this->reservation = new Reservation();
     }
 
     public function index()
     {
-        $this->places->setEtat(2,1);
-        $user = $this->users->getUsers();
-        $places = $this->places->getPlacesOccupees();
-        $this->genererVue(array('users' => $user , 'places' => $places));
+        $resauser = $this->reservation->getReservations();
+        $resaplace = $this->reservation->getPlacefromReservation(2);
+        $resacours = $this->reservation->getReservationAttente();
+        $this->genererVue(array('resau' => $resauser , 'resap' => $resaplace , 'resae' => $resacours));
     }
-
 }

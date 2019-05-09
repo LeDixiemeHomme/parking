@@ -10,3 +10,14 @@
 ?>
 
 <h1>Accueil</h1>
+
+<?php var_dump($resae);
+
+echo '<br><br>';
+
+foreach ($resae as $e )
+{
+    var_dump($e['id_r']);
+    var_dump($e['date_fin']);
+    echo '<br><br>';
+}

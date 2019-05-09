@@ -11,19 +11,6 @@ require_once 'Framework/Modele.php';
 
 class Utilisateur extends Modele {
 
-    public function connecter($mail, $mdp) {
-        $mdp_h = $this->hacher($mdp);
-        $sql = 'select id_u from users where mail = ? and mdp = ?';
-        $util = $this->executerRequete($sql, array($mail, $mdp_h));
-        return ($util->rowCount() == 1);
-    }
-
-    public function inscription($nom, $prenom, $mail, $mdp) {
-        $mdp_h = $this->hacher($mdp);
-        $sql = 'insert into users(nom, prenom, mail, mdp) values(?, ?, ?, ?)';
-        $this->executerRequete($sql, array($nom, $prenom, $mail, $mdp_h));
-    }
-
     public function getUsers() {
         $sql = 'select * from users';
         $util = $this->executerRequete($sql);
@@ -37,6 +24,50 @@ class Utilisateur extends Modele {
             return $user->fetch();
         else
             throw new Exception("Aucune place ne correspond à l'identifiant '$idUser'");
+    }
+
+    public function setEtat($etat_u, $id_u){
+        $sql = 'UPDATE users SET etat_u = ? WHERE id_u = ?';
+        $util = $this->executerRequete($sql, array($etat_u, $id_u));
+    }
+
+    public function setNiveau($niveau, $id_u){
+        $sql = 'UPDATE users SET niveau = ? WHERE id_u = ?';
+        $util = $this->executerRequete($sql, array($niveau, $id_u));
+    }
+
+    public function setPrenom($prenom, $id_u){
+        $sql = 'UPDATE users SET prenom = ? WHERE id_u = ?';
+        $util = $this->executerRequete($sql, array($prenom, $id_u));
+    }
+
+    public function setNom($nom, $id_u){
+        $sql = 'UPDATE users SET nom = ? WHERE id_u = ?';
+        $util = $this->executerRequete($sql, array($nom, $id_u));
+    }
+
+    public function setMail($mail, $id_u){
+        $sql = 'UPDATE users SET mail = ? WHERE id_u = ?';
+        $util = $this->executerRequete($sql, array($mail, $id_u));
+    }
+
+    public function setMdp($mdp, $id_u){
+        $mdp_h = $this->hacher($mdp);
+        $sql = 'UPDATE users SET mdp = ? WHERE id_u = ?';
+        $util = $this->executerRequete($sql, array($mdp_h, $id_u));
+    }
+
+    public function connecter($mail, $mdp) {
+        $mdp_h = $this->hacher($mdp);
+        $sql = 'select id_u from users where mail = ? and mdp = ?';
+        $util = $this->executerRequete($sql, array($mail, $mdp_h));
+        return ($util->rowCount() == 1);
+    }
+
+    public function inscription($nom, $prenom, $mail, $mdp) {
+        $mdp_h = $this->hacher($mdp);
+        $sql = 'insert into users(nom, prenom, mail, mdp) values(?, ?, ?, ?)';
+        $this->executerRequete($sql, array($nom, $prenom, $mail, $mdp_h));
     }
 
     public function confirmeUser($mail, $mdp) {

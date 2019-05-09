@@ -21,10 +21,6 @@ h1, h2 {
     color: white;
 }
 
-.titreBillet {
-    margin-bottom : 0px;
-}
-
 #global {
     min-height: 100%;  /* Voir commentaire sur html et body plus haut */
     background: #333534;
@@ -36,20 +32,4 @@ h1, h2 {
 
 #contenu {
     margin-bottom : 30px;
-}
-
-#titreBlog, #piedBlog {
-    text-align: center;
-}
-
-#titreReponses {
-    font-size : 100%;
-}
-
-#txtCommentaire {
-    width: 50%;
-}
-
-#lienDeco {
-    color: #bfbfbf;
 }
