@@ -32,11 +32,20 @@
                     <ul class="navbar-nav mr-auto">
                         <?php
                     if(isset($_SESSION['connecte']))
-                        { echo '
-                        <li class="nav-item"><a class="nav-link" href="compte">Compte</a></li>
-                        <li class="nav-item"><a class="nav-link" href="connexion/deconnecter">Se déconnecter</a></li>
-                        ' ; }
-                    else { echo '
+                    {
+                        switch ($_SESSION['niveau'])
+                        {
+                            case 1: echo '<li class="nav-item"><a class="nav-link" href="">En cours de validation</a></li>'; break;
+                            case 2: echo '<li class="nav-item"><a class="nav-link" href="compte">Compte</a></li>'; break;
+                            case 3: echo '<li class="nav-item"><a class="nav-link" href="admin">Compte Admin</a></li>';
+                                    echo '<li class="nav-item"><a class="nav-link" href="compte">Compte</a></li>'; break;
+                            default:echo '<li class="nav-item"><a class="nav-link" href="bloque">Compte bloqué</a></li>'; break;
+                        }
+                        echo '<li class="nav-item"><a class="nav-link" href="connexion/deconnecter">Se déconnecter</a></li>';
+                    }
+                    else
+                    {
+                        echo '
                         <li class="nav-item"><a class="nav-link" href="connexion">Se connecter</a></li>
                         <li class="nav-item"><a class="nav-link" href="inscription">S\'inscrire</a></li>
                         '; } ?>

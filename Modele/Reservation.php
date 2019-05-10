@@ -79,7 +79,7 @@ class Reservation extends Modele {
 
     public function getReservationAttente() {
         $sql = 'select * from reservation 
-                where date_resa is true AND date_debut IS NULL';
+                where date_resa is true AND date_debut IS NULL AND date_debut IS NULL';
         $resa = $this->executerRequete($sql);
         if ($resa->rowCount() > 0)
             return $resa;
@@ -113,6 +113,27 @@ class Reservation extends Modele {
     public function addReservation($date_debut, $date_fin, $id_u, $id_p) {
         $sql = 'insert into reservation(date_resa, date_debut, date_fin, id_u, id_p) values (NOW(),?,?,?,?)';
         $this->executerRequete($sql, array($date_debut, $date_fin, $id_u, $id_p));
+    }
+
+    public function isEnAttente($id_r) {
+        $sql = 'select * from reservation 
+                where id_r = ? AND date_resa is true AND date_debut IS NULL AND date_debut IS NULL';
+        $resa = $this->executerRequete($sql, array($id_r));
+            return $resa->rowCount() > 0;
+    }
+
+    public function isEnCours($id_r) {
+        $sql = 'select * from reservation 
+                where id_r = ? AND NOW() < date_fin';
+        $resa = $this->executerRequete($sql, array($id_r));
+        return $resa->rowCount() > 0;
+    }
+
+    public function isFinies($id_r) {
+        $sql = 'select * from reservation 
+                where id_r = ? AND NOW() > date_fin';
+        $resa = $this->executerRequete($sql, array($id_r));
+        return $resa->rowCount() > 0;
     }
 
 }

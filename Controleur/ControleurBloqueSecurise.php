@@ -4,12 +4,12 @@ require_once 'Framework/Controleur.php';
 
 /**
  * Created by PhpStorm.
- * Utilisateur: benoi
- * Date: 18/04/2019
- * Time: 01:21
+ * User: benoi
+ * Date: 10/05/2019
+ * Time: 02:23
  */
 
-abstract class ControleurAdminSecurise extends Controleur
+abstract class ControleurBloqueSecurise extends Controleur
 {
 
     public function executerAction($action)
@@ -17,11 +17,10 @@ abstract class ControleurAdminSecurise extends Controleur
         // Vérifie si les informations utilisateur sont présents dans la session
         // Si oui, l'utilisateur s'est déjà authentifié : l'exécution de l'action continue normalement
         // Si non, l'utilisateur est renvoyé vers le contrôleur de connexion
-        if ((isset($_SESSION['connecte'])) && $_SESSION['niveau'] == 3) {
+        if ((isset($_SESSION['connecte'])) && $_SESSION['niveau'] == 0) {
             parent::executerAction($action);
         }
         else {
-            $this->requete->getSession()->detruire();
             $this->rediriger("connexion");
         }
     }

@@ -23,12 +23,17 @@ class ControleurAccueil extends Controleur {
         $this->place = new Place();
         $this->reservation = new Reservation();
     }
+    public function retTrue() {
+        return 1 > 2;
+    }
+
 
     public function index()
     {
+        $reaaze = $this->retTrue();
         $resauser = $this->reservation->getReservations();
         $resaplace = $this->reservation->getPlacefromReservation(2);
-        $resacours = $this->reservation->getReservationAttente();
-        $this->genererVue(array('resau' => $resauser , 'resap' => $resaplace , 'resae' => $resacours));
+        $resacours = $this->reservation->isEnAttente(16);
+        $this->genererVue(array('resau' => $resauser , 'resap' => $resaplace , 'resae' => $resacours, 're' => $reaaze));
     }
 }

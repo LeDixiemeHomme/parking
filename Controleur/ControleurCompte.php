@@ -7,12 +7,12 @@
  * Time: 21:07
  */
 
-//require 'Framework/Controleur.php';
+require_once 'ControleurSecurise.php';
 require 'Modele/Utilisateur.php';
 require 'Modele/Place.php';
 require 'Modele/Reservation.php';
 
-class ControleurCompte extends Controleur
+class ControleurCompte extends ControleurSecurise
 {
 
     private $users;

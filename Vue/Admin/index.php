@@ -1,4 +1,4 @@
-<?php $this->titre = "Accueil";
+<?php $this->titre = "Admin";
 
 /**
  * Created by PhpStorm.
@@ -9,9 +9,7 @@
 
 ?>
 
-<h1>Accueil</h1>
+<h1>Admin</h1>
 
-<?php var_dump($resae);
 
-echo '<br><br>';
-
+vue admin

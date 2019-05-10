@@ -1,6 +1,7 @@
 <?php
 
 require_once 'Controleur.php';
+require_once 'Controleur/ControleurErreur.php';
 require_once 'Requete.php';
 require_once 'Vue.php';
 
@@ -65,7 +66,11 @@ class Routeur
             return $controleur;
         }
         else {
-            throw new Exception("Fichier '$fichierControleur' introuvable");
+            $controleur = 'Erreur';
+            $classeControleur = "Controleur" . $controleur;
+            $controleur = new $classeControleur();
+            $controleur->setRequete($requete);
+            return $controleur;
         }
     }
 
