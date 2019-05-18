@@ -1,6 +1,6 @@
-<?php $this->titre = "Mon Blog - Connexion"?>
+<?php $this->titre = "Mon Blog - Connection"?>
 
-<form action="connexion/connecter" method="post">
+<form action="connection/connecter" method="post">
     <div class="form-group">
         <label for="email">Adresse mail</label>
         <input type="email" class="form-control" id="email" placeholder="vous@example.com" name="mail" required>

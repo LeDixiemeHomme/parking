@@ -10,7 +10,7 @@ require_once 'Modele/Utilisateur.php';
  * Time: 23:12
  */
 
-class ControleurConnexion extends Controleur
+class ControleurConnection extends Controleur
 {
     private $utilisateur;
 
