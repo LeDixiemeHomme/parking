@@ -14,7 +14,7 @@ class Utilisateur extends Modele {
     public function getUsers() {
         $sql = 'select * from users';
         $util = $this->executerRequete($sql);
-        return $util;
+        return $util->fetchAll();
     }
 
     public function getUser($idUser) {

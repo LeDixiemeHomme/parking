@@ -45,6 +45,13 @@ class Place extends Modele {
         return $ligne['nbPlaces'];
     }
 
+    public function getPlaceHasard()
+    {
+        $sql = 'select id_p from place where etat_p = 1 order by RAND ( ) LIMIT 1';
+        $places = $this->executerRequete($sql);
+        return $places->fetch();
+    }
+
     public function setEtat($etat_p, $id_p){
         $sql = 'UPDATE place SET etat_p = ? WHERE id_p = ?';
         $place = $this->executerRequete($sql, array($etat_p, $id_p));

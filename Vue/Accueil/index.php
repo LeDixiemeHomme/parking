@@ -29,9 +29,14 @@ if(isset($_SESSION['connecte'])) {
         case NULL:
             echo "Vous n'êtes pas connecté. <br> Inscrivez vous ou connectez vous.";
             break;
-    }
+    }   echo '<br><br>';
 
-    var_dump($pl);
+    //var_dump($re);
+    echo '<br><br>';
+
+    foreach ($re as $r)
+    {var_dump($r); echo '<br><br>';}
+
 }
 else echo "Vous n'êtes pas connecté. <br> Inscrivez vous ou connectez vous.";
 ?>

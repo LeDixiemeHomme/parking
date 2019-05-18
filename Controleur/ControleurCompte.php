@@ -18,18 +18,15 @@ class ControleurCompte extends ControleurSecurise
     private $users;
     private $reservation;
     private $place;
+    private $temps_resa = '2 hours';
 
     public function __construct()
     {
         $this->users = new Utilisateur();
         $this->place = new Place();
         $this->reservation = new Reservation();
-    }
-
-    public function ajoutTemps($date, $temps_ajoute)
-    {
-        date_add($date, date_interval_create_from_date_string($temps_ajoute));
-        return $date;
+        $this->dateNow = new Datetime('now');
+        $this->dateFuture = new Datetime('now');
     }
 
     public function getValidite($idResa) {
@@ -44,11 +41,13 @@ class ControleurCompte extends ControleurSecurise
         return $newDate;
     }
 
-    public function compte($test) {
-        return $test->rowCount();
+    function ajoutTemps($date,$temps_ajoute)
+    {
+        $date = date_add($date, date_interval_create_from_date_string($temps_ajoute));
+        return $date;
     }
 
-    public function ajouterResa()
+    /*public function ajouterResa()
     {
         if ($this->requete->existeParametre("date_debut")
             && $this->requete->existeParametre("date_fin")
@@ -64,14 +63,34 @@ class ControleurCompte extends ControleurSecurise
             $this->rediriger("compte");
         } else
             throw new Exception("Action impossible : Informations non définies");
+    }*/
+
+    public function ajouterResa()
+    {
+        if($_SESSION['etat_u'] == 1)
+        {
+            $nblibre = count($this->place->getPlacesLibres());
+            if($nblibre)
+            {
+                $place = $this->place->getPlaceHasard();
+                $date_debut = $this->dateNow->format('Y-m-d H:i:s');
+                $date_fin = $this->ajoutTemps($this->dateFuture,$this->temps_resa)->format('Y-m-d H:i:s');
+                $this->reservation->addReservation($date_debut, $date_fin, $_SESSION['id_u'], $place['id_p']);
+                $this->rediriger("compte");
+            }
+            else
+            {
+                echo 'echec !';
+            }
+        }
     }
 
     public function index()
     {
+        //$reservation = $this->ajouterResa();
+        //$nb = count($reservation);
         $users = $this->users->getUser($_SESSION['id_u']);
-        $reservation = $this->reservation->getAllByUser($_SESSION['id_u']);
-        $nb = $this->compte($reservation);
-        $this->genererVue(array( 'users' => $users, 'resa' => $reservation, 'nb' => $nb));
+        $this->genererVue(array('users' => $users));
     }
 
 }

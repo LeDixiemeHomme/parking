@@ -31,11 +31,12 @@
 
     modifier son mot de passe <br>
 
+    <br>
+    <br>
 
     <form action="compte/ajouterResa" method="post">
-        <button type="button" class="btn btn-outline-primary">Primary</button>
+        <button type="submit" class="btn btn-outline-primary">Primary</button>
     </form>
-
 
 <?php /*
 $m = 0;

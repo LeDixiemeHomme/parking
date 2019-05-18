@@ -27,11 +27,12 @@ class ControleurAccueil extends Controleur {
     public function index()
     {
         $place = $this->place->getPlaces();
+        $reservation = $this->reservation->getReservationsByPlace(6);
         if(isset($_SESSION['id_u'])) {
             $users = $this->users->getUser($_SESSION['id_u']);
         }
         if(isset($users['niveau']))$niveau = $users['niveau'];
         else $niveau = NULL;
-        $this->genererVue(array('niv' => $niveau , 'pl' => $place));
+        $this->genererVue(array('niv' => $niveau , 'pl' => $place, 're' => $reservation));
     }
 }
