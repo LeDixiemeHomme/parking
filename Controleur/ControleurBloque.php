@@ -1,6 +1,6 @@
 <?php
 
-require_once 'ControleurBloqueSecurise.php';
+require_once 'Securite/ControleurBloqueSecurise.php';
 
 /**
  * Created by PhpStorm.

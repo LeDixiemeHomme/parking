@@ -9,7 +9,7 @@
 ?>
 
 <footer>
-    <p>Réalisé par Benoît Valle pour l'épreuve E6</p>
+    <p>Réalisé par Benoît Valle pour l'épreuve E4</p>
 </footer>
 </div> <!-- #global -->
 

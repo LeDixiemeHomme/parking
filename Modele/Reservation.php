@@ -8,12 +8,20 @@
 
 class Reservation extends Modele {
 
+    /**
+     * @return array avec toutes les reservations de la table reservation
+     */
     public function getReservations() {
         $sql = 'select * from reservation';
         $resa = $this->executerRequete($sql);
-        return $resa;
+        return $resa->fetchAll();
     }
 
+    /**
+     * @param $idResa
+     * @return une reservation selon son id passé en parametre
+     * @throws Exception
+     */
     public function getReservation($idResa) {
         $sql = 'select * from reservation where id_r = ?';
         $resa = $this->executerRequete($sql, array($idResa));
@@ -23,6 +31,11 @@ class Reservation extends Modele {
             throw new Exception("Aucune reservation ne correspond à l'identifiant '$idResa'");
     }
 
+    /**
+     * @param $idUser
+     * @return une reservation en fonction de l'id d'un utilisateur passé en paramètre
+     * @throws Exception
+     */
     public function getReservationsUser($idUser) {
         $sql = 'select * from reservation where id_u = ?';
         $resa = $this->executerRequete($sql, array($idUser));
@@ -32,6 +45,11 @@ class Reservation extends Modele {
             throw new Exception("Aucune reservation ne correspond à l'identifiant '$idUser'");
     }
 
+    /**
+     * @param $idPlace
+     * @return une reservation en fonction de l'id d'une place passé en paramètre
+     * @throws Exception
+     */
     public function getReservationsPlace($idPlace) {
         $sql = 'select * from reservation where id_u = ?';
         $resa = $this->executerRequete($sql, array($idPlace));
@@ -41,19 +59,42 @@ class Reservation extends Modele {
             throw new Exception("Aucune reservation ne correspond à l'identifiant '$idPlace'");
     }
 
-    public function getUserfromReservation($id_r) {
-        $sql = 'select u.id_u, u.nom, u.prenom, u.mail, u.etat_u, u.niveau 
-                from reservation r, users u where r.id_r = ? && r.id_u = u.id_u';
+    /**
+     * @param $id_p
+     * @return array
+     * @throws Exception
+     */
+    public function getPlacefromReservation($id_p) {
+        $sql = 'select p.id_p, p.num_p, p.etat_p
+                from reservation r, place p where r.id_r = ? && r.id_p = p.id_p';
+        $resa = $this->executerRequete($sql, array($id_p));
+        if ($resa->rowCount() > 0)
+            return $resa->fetchAll();
+        else
+            throw new Exception("Aucune reservation ne correspond à l'identifiant '$id_p'");
+    }
+
+    public function getAllByReservation($id_r) {
+        $sql = 'select * from reservation r, users u, place p where r.id_r = ? AND r.id_u = u.id_u AND p.id_p = r.id_p';
         $resa = $this->executerRequete($sql, array($id_r));
         if ($resa->rowCount() > 0)
-            return $resa->fetch();
+            return $resa->fetchAll();
         else
             throw new Exception("Aucune reservation ne correspond à l'identifiant '$id_r'");
     }
 
-    public function getPlacefromReservation($id_p) {
-        $sql = 'select p.id_p, p.num_p, p.etat_p
-                from reservation r, place p where r.id_r = ? && r.id_p = p.id_p';
+    public function getAllByUser($id_u) {
+        $sql = 'select * from reservation r, users u, place p 
+                where ? = r.id_u AND p.id_p = r.id_p AND r.id_u = u.id_u';
+        $resa = $this->executerRequete($sql, array($id_u));
+        if ($resa->rowCount() > 0)
+            return $resa;
+        else
+            throw new Exception("Aucune reservation ne correspond à l'identifiant '$id_u'");
+    }
+
+    public function getAllByPlace($id_p) {
+        $sql = 'select * from reservation r, users u, place p where r.id_u = u.id_u AND r.id_p = ? AND p.id_p = r.id_p';
         $resa = $this->executerRequete($sql, array($id_p));
         if ($resa->rowCount() > 0)
             return $resa->fetch();
@@ -136,4 +177,9 @@ class Reservation extends Modele {
         return $resa->rowCount() > 0;
     }
 
+    public function tempsRestant($id_r) {
+        $sql = 'select datediff(date_debut, date_fin) from reservation where id_r = ?';
+        $date = $this->executerRequete($sql, array($id_r));
+        return $date;
+    }
 }

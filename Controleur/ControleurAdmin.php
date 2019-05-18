@@ -1,6 +1,6 @@
 <?php
 
-require_once 'ControleurAdminSecurise.php';
+require_once 'Securite/ControleurAdminSecurise.php';
 require_once 'Modele/Utilisateur.php';
 require_once 'Modele/Place.php';
 require_once 'Modele/Reservation.php';

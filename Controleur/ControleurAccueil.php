@@ -23,17 +23,15 @@ class ControleurAccueil extends Controleur {
         $this->place = new Place();
         $this->reservation = new Reservation();
     }
-    public function retTrue() {
-        return 1 > 2;
-    }
-
 
     public function index()
     {
-        $reaaze = $this->retTrue();
-        $resauser = $this->reservation->getReservations();
-        $resaplace = $this->reservation->getPlacefromReservation(2);
-        $resacours = $this->reservation->isEnAttente(16);
-        $this->genererVue(array('resau' => $resauser , 'resap' => $resaplace , 'resae' => $resacours, 're' => $reaaze));
+        $place = $this->place->getPlaces();
+        if(isset($_SESSION['id_u'])) {
+            $users = $this->users->getUser($_SESSION['id_u']);
+        }
+        if(isset($users['niveau']))$niveau = $users['niveau'];
+        else $niveau = NULL;
+        $this->genererVue(array('niv' => $niveau , 'pl' => $place));
     }
 }

@@ -7,7 +7,7 @@
  * Time: 21:07
  */
 
-require_once 'ControleurSecurise.php';
+require_once 'Securite/ControleurSecurise.php';
 require 'Modele/Utilisateur.php';
 require 'Modele/Place.php';
 require 'Modele/Reservation.php';
@@ -16,6 +16,8 @@ class ControleurCompte extends ControleurSecurise
 {
 
     private $users;
+    private $reservation;
+    private $place;
 
     public function __construct()
     {
@@ -42,6 +44,10 @@ class ControleurCompte extends ControleurSecurise
         return $newDate;
     }
 
+    public function compte($test) {
+        return $test->rowCount();
+    }
+
     public function ajouterResa()
     {
         if ($this->requete->existeParametre("date_debut")
@@ -60,15 +66,12 @@ class ControleurCompte extends ControleurSecurise
             throw new Exception("Action impossible : Informations non définies");
     }
 
-
     public function index()
     {
-        $resa = //$this->reservation->addReservation($this->creerDate('now'), $this->creerDate('now'), 1, 1);
-        $places = $this->place->getPlaces();
-        $utilisateur = $this->users->getUser($_SESSION['id_u']);
-        $uss = $this->reservation->getUserfromReservation(1);
-        $vali = $this->getValidite(2);
-        $this->genererVue(array('places' => $places , 'val' => $vali , 'uti' => $utilisateur, 'resa' => $resa, 'uss' => $uss));
+        $users = $this->users->getUser($_SESSION['id_u']);
+        $reservation = $this->reservation->getAllByUser($_SESSION['id_u']);
+        $nb = $this->compte($reservation);
+        $this->genererVue(array( 'users' => $users, 'resa' => $reservation, 'nb' => $nb));
     }
 
 }
