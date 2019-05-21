@@ -38,6 +38,12 @@ class Place extends Modele {
         return $places->fetchAll();
     }
 
+    public function getPlacesAttentes() {
+        $sql = 'select * from place where etat_p = 3';
+        $places = $this->executerRequete($sql);
+        return $places->fetchAll();
+    }
+
     public function getNbPlaces() {
         $sql = 'select count(*) as nbPlaces from place';
         $resultat = $this->executerRequete($sql);
@@ -45,14 +51,19 @@ class Place extends Modele {
         return $ligne['nbPlaces'];
     }
 
-    public function getPlaceHasard()
-    {
+    public function getPlaceHasard() {
         $sql = 'select id_p from place where etat_p = 1 order by RAND ( ) LIMIT 1';
         $places = $this->executerRequete($sql);
         return $places->fetch();
     }
 
-    public function setEtat($etat_p, $id_p){
+    public function getPlacEtat4() {
+            $sql = 'select * from place where etat_p = 4';
+            $places = $this->executerRequete($sql);
+            return $places->fetch();
+    }
+
+    public function setEtat($etat_p, $id_p) {
         $sql = 'UPDATE place SET etat_p = ? WHERE id_p = ?';
         $place = $this->executerRequete($sql, array($etat_p, $id_p));
     }

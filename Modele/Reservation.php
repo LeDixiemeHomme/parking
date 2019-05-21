@@ -12,7 +12,9 @@ class Reservation extends Modele {
      * @return array avec toutes les infos des reservations des tables reservation users et place
      */
     public function getReservations() {
-        $sql = 'select id_r, r.id_u, r.id_p, date_resa, date_debut, date_fin, nom, prenom, mail, niveau, etat_u, num_p, etat_p  from reservation r, place p, users u where u.id_u = r.id_u and p.id_p = r.id_p';
+        $sql = 'select id_r, r.id_u, r.id_p, date_resa, date_debut, date_fin, nom, prenom, mail, niveau, etat_u, num_p, etat_p  
+                from reservation r, place p, users u 
+                where u.id_u = r.id_u and p.id_p = r.id_p';
         $resa = $this->executerRequete($sql);
         return $resa->fetchAll();
     }
@@ -23,7 +25,9 @@ class Reservation extends Modele {
      * @throws Exception
      */
     public function getReservation($idResa) {
-        $sql = 'select id_r, r.id_u, r.id_p, date_resa, date_debut, date_fin, nom, prenom, mail, niveau, etat_u, num_p, etat_p  from reservation r, place p, users u where u.id_u = r.id_u and p.id_p = r.id_p and r.id_r = ?';
+        $sql = 'select id_r, r.id_u, r.id_p, date_resa, date_debut, date_fin, nom, prenom, mail, niveau, etat_u, num_p, etat_p  
+                from reservation r, place p, users u 
+                where u.id_u = r.id_u and p.id_p = r.id_p and r.id_r = ?';
         $resa = $this->executerRequete($sql, array($idResa));
         if ($resa->rowCount() > 0)
             return $resa->fetch();
@@ -37,7 +41,9 @@ class Reservation extends Modele {
      * @throws Exception
      */
     public function getReservationsByUser($idUser) {
-        $sql = 'select id_r, r.id_u, r.id_p, date_resa, date_debut, date_fin, nom, prenom, mail, niveau, etat_u, num_p, etat_p  from reservation r, place p, users u where u.id_u = r.id_u and p.id_p = r.id_p and r.id_u = ?';
+        $sql = 'select id_r, r.id_u, r.id_p, date_resa, date_debut, date_fin, nom, prenom, mail, niveau, etat_u, num_p, etat_p  
+                from reservation r, place p, users u 
+                where u.id_u = r.id_u and p.id_p = r.id_p and r.id_u = ?';
         $resa = $this->executerRequete($sql, array($idUser));
         if ($resa->rowCount() > 0)
             return $resa->fetchAll();
@@ -51,7 +57,9 @@ class Reservation extends Modele {
      * @throws Exception
      */
     public function getReservationsByPlace($idPlace) {
-        $sql = 'select id_r, r.id_u, r.id_p, date_resa, date_debut, date_fin, nom, prenom, mail, niveau, etat_u, num_p, etat_p  from reservation r, place p, users u where u.id_u = r.id_u and p.id_p = r.id_p and r.id_p = ?';
+        $sql = 'select id_r, r.id_u, r.id_p, date_resa, date_debut, date_fin, nom, prenom, mail, niveau, etat_u, num_p, etat_p  
+                from reservation r, place p, users u 
+                where u.id_u = r.id_u and p.id_p = r.id_p and r.id_p = ?';
         $resa = $this->executerRequete($sql, array($idPlace));
         if ($resa->rowCount() > 0)
             return $resa->fetchAll();
@@ -62,34 +70,110 @@ class Reservation extends Modele {
     /**
      * @return array des reservation qui ne sont pas encore terminées
      */
-    public function getReservationEnCours() {
-        $sql = 'select * from reservation 
-                where NOW() < date_fin';
+    public function getReservationsEnCours() {
+        $sql = 'select r.id_r, r.id_u, r.id_p, r.date_resa, r.date_debut, r.date_fin,
+                u.nom, u.prenom, u.mail, u.niveau, u.etat_u,
+                p.num_p, p.etat_p  
+                from reservation r, users u, place p
+                where u.id_u = r.id_u and p.id_p = r.id_p and date_debut < NOW() and date_fin > NOW()';
         $resa = $this->executerRequete($sql);
         if ($resa->rowCount() > 0)
             return $resa->fetchAll();
     }
 
-    /**
-     * @return array des reservation qui sont terminées
-     */
-    public function getReservationFinies() {
-        $sql = 'select * from reservation 
-                where NOW() > date_fin';
+    public function getReservationEnCoursByUser($idUser) {
+        $sql = 'select id_r, r.id_u, r.id_p, date_resa, date_debut, date_fin, nom, prenom, mail, niveau, etat_u, num_p, etat_p  
+                from reservation r, place p, users u
+                where u.id_u = r.id_u and p.id_p = r.id_p and r.id_u = ? and date_debut < NOW() and date_fin > NOW()';
+        $resa = $this->executerRequete($sql, array($idUser));
+        if ($resa->rowCount() > 0)
+            return $resa->fetch();
+    }
+
+    public function getReservationEnCoursByPlace($idPlace) {
+        $sql = 'select id_r, r.id_u, r.id_p, date_resa, date_debut, date_fin, nom, prenom, mail, niveau, etat_u, num_p, etat_p  
+                from reservation r, place p, users u 
+                where u.id_u = r.id_u and p.id_p = r.id_p and r.id_p = ? and date_debut < NOW() and date_fin > NOW()';
+        $resa = $this->executerRequete($sql, array($idPlace));
+        if ($resa->rowCount() > 0)
+            return $resa->fetch();
+    }
+
+    public function getReservationsEnAttentes() {
+        $sql = 'select id_r, r.id_u, r.id_p, date_resa, date_debut, date_fin, nom, prenom, mail, niveau, etat_u, num_p, etat_p  
+                from reservation r, place p, users u 
+                where u.id_u = r.id_u and p.id_p = r.id_p and date_debut > NOW() and date_fin > NOW()';
         $resa = $this->executerRequete($sql);
         if ($resa->rowCount() > 0)
-            return $resa;
+            return $resa->fetchAll();
+    }
+
+    public function getReservationEnAttenteByUser($idUser) {
+        $sql = 'select id_r, r.id_u, r.id_p, date_resa, date_debut, date_fin, nom, prenom, mail, niveau, etat_u, num_p, etat_p  
+                from reservation r, place p, users u 
+                where u.id_u = r.id_u and p.id_p = r.id_p and r.id_u = ?  and date_debut > NOW() and date_fin > NOW()';
+        $resa = $this->executerRequete($sql, array($idUser));
+        if ($resa->rowCount() > 0)
+            return $resa->fetch();
+    }
+
+    public function getReservationEnAttenteByPlace($idPlace) {
+        $sql = 'select id_r, r.id_u, r.id_p, date_resa, date_debut, date_fin, nom, prenom, mail, niveau, etat_u, num_p, etat_p  
+                from reservation r, place p, users u 
+                where u.id_u = r.id_u and p.id_p = r.id_p and r.id_p = ?  and date_debut > NOW() and date_fin > NOW()';
+        $resa = $this->executerRequete($sql, array($idPlace));
+        if ($resa->rowCount() > 0)
+            return $resa->fetch();
+    }
+
+    public function getReservationsMouvant($date_resa) {
+        $sql = 'select id_r, r.id_u, r.id_p, date_resa, date_debut, date_fin, nom, prenom, mail, niveau, etat_u, num_p, etat_p  
+                from reservation r, place p, users u 
+                where u.id_u = r.id_u and p.id_p = r.id_p and etat_u = 3 and date_resa <= ?';
+        $resa = $this->executerRequete($sql, array($date_resa));
+        if ($resa->rowCount() > 0)
+            return $resa->fetchAll();
+
     }
 
     /**
-     * @return array des reservation qui n'ont pas commencées
+     * @return array des reservation qui sont terminées
      */
-    public function getReservationAttente() {
-        $sql = 'select * from reservation 
-                where date_resa is true AND date_debut IS NULL AND date_debut IS NULL';
+    public function getReservationsFinies() {
+        $sql = 'select id_r, r.id_u, r.id_p, date_resa, date_debut, date_fin, nom, prenom, mail, niveau, etat_u, num_p, etat_p  
+                from reservation r, place p, users u
+                where u.id_u = r.id_u and p.id_p = r.id_p and date_fin < NOW()';
         $resa = $this->executerRequete($sql);
         if ($resa->rowCount() > 0)
-            return $resa;
+            return $resa->fetchAll();
+    }
+
+    public function getProchainePlaceLibre() {
+        $sql = 'select r.id_p, date_resa, date_debut, date_fin 
+                from place p, reservation r 
+                where p.etat_p = 2 and p.id_p = r.id_p
+                order by (date_resa) LIMIT 1';
+        $resa = $this->executerRequete($sql);
+        if ($resa->rowCount() > 0)
+            return $resa->fetch();
+    }
+
+    public function getListeAttente() {
+        $sql = 'select id_r, r.id_u, r.id_p, date_resa, date_debut, date_fin, nom, prenom, mail, niveau, etat_u, num_p, etat_p  
+                from reservation r, place p, users u 
+                where u.id_u = r.id_u and p.id_p = r.id_p and u.etat_u = 3 and p.etat_p = 3
+                order by (date_resa)';
+        $resa = $this->executerRequete($sql);
+        if ($resa->rowCount() > 0)
+            return $resa->fetchAll();
+    }
+
+    public function getReservationPlace4() {
+        $sql = 'select id_r, r.id_u, r.id_p, date_resa, date_debut, date_fin, nom, prenom, mail, niveau, etat_u, num_p, etat_p  
+                from reservation r, place p, users u 
+                where u.id_u = r.id_u and p.id_p = r.id_p and etat_p = 4';
+        $places = $this->executerRequete($sql);
+        return $places->fetch();
     }
 
     public function setDateFin($date_fin, $id_r){
@@ -107,12 +191,12 @@ class Reservation extends Modele {
         $util = $this->executerRequete($sql, array($date_resa, $id_r));
     }
 
-    public function setIdPlace($id_u, $id_r){
+    public function setIdUser($id_u, $id_r){
         $sql = 'UPDATE reservation SET id_u = ? WHERE id_r = ?';
         $util = $this->executerRequete($sql, array($id_u, $id_r));
     }
 
-    public function setIdUser($id_p, $id_r){
+    public function setIdPlace($id_p, $id_r){
         $sql = 'UPDATE reservation SET id_p = ? WHERE id_r = ?';
         $util = $this->executerRequete($sql, array($id_p, $id_r));
     }

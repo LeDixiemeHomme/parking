@@ -6,10 +6,15 @@
  * Date: 17/04/2019
  * Time: 23:12
  */
-?>
 
-<h1>amanda</h1>
-
-<h1>
-    <?php var_dump($_SESSION); ?>
-</h1>
+echo $nbLibres;
+echo '<br><br>';
+echo $nbOccupees;
+echo '<br><br>';
+echo $nbAttentes;
+echo '<br><br>';
+echo $nbIndisponibles;
+echo '<br><br>';
+var_dump($resaCours);
+echo '<br><br>';
+var_dump($resaU);

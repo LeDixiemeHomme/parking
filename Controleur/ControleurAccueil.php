@@ -4,6 +4,7 @@ require_once 'Framework/Controleur.php';
 require_once 'Modele/Utilisateur.php';
 require_once 'Modele/Place.php';
 require_once 'Modele/Reservation.php';
+require_once 'Modele/Duree_reservation.php';
 
 /**
  * Created by PhpStorm.
@@ -17,22 +18,47 @@ class ControleurAccueil extends Controleur {
     private $users;
     private $place;
     private $reservation;
+    private $duree;
 
     public function __construct() {
         $this->users = new Utilisateur();
         $this->place = new Place();
         $this->reservation = new Reservation();
+        $this->duree = new Duree_reservation();
     }
 
     public function index()
     {
-        $place = $this->place->getPlaces();
-        $reservation = $this->reservation->getReservationsByPlace(6);
+        $ALL_RESA_FINIES = $this->reservation->getReservationsFinies();
+        $ALL_RESA_EN_COURS = $this->reservation->getReservationsEnCours();
+        $ALL_RESA_ATTENTES = $this->reservation->getReservationsEnAttentes();
+
+        if($ALL_RESA_FINIES && $ALL_RESA_EN_COURS && $ALL_RESA_ATTENTES) {
+            foreach ($ALL_RESA_FINIES as $resa) {
+                $this->users->setEtat(1, $resa['id_u']);
+                $this->place->setEtat(1, $resa['id_p']);
+                if($_SESSION['id_u'] == $resa['id_u']) {$this->requete->getSession()->setAttribut("etat_u", 1);}
+            }
+            foreach ($ALL_RESA_EN_COURS as $resa) {
+                $this->users->setEtat(2, $resa['id_u']);
+                $this->place->setEtat(2, $resa['id_p']);
+                if($_SESSION['id_u'] == $resa['id_u']) {$this->requete->getSession()->setAttribut("etat_u", 2);}
+            }
+            foreach ($ALL_RESA_ATTENTES as $resa) {
+                $this->users->setEtat(3, $resa['id_u']);
+                $this->place->setEtat(3, $resa['id_p']);
+                if($_SESSION['id_u'] == $resa['id_u']) {$this->requete->getSession()->setAttribut("etat_u", 3);}
+            }
+        }
+
         if(isset($_SESSION['id_u'])) {
             $users = $this->users->getUser($_SESSION['id_u']);
         }
         if(isset($users['niveau']))$niveau = $users['niveau'];
         else $niveau = NULL;
-        $this->genererVue(array('niv' => $niveau , 'pl' => $place, 're' => $reservation));
+        $this->genererVue(array('niv' => $niveau,
+            'resaf' => $ALL_RESA_FINIES,
+            'resac' => $ALL_RESA_EN_COURS,
+            'resaa' => $ALL_RESA_ATTENTES));
     }
 }

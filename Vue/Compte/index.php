@@ -11,94 +11,41 @@
 
 <h1>Le compte de <?=$_SESSION['prenom']?> <?=$_SESSION['nom']?>.</h1>
 
-<h2>Vous trouverez des informations utiles vous concernant.</h2>
+<p>Sur cette page vous trouverez des informations utiles vous concernant.</p>
 
-<h3>Votre historique de réservation :</h3>
+<?php
 
-<p>Bonjour <?=$users['prenom'].' '. $users['nom']?> </p>
+    if($resaU)
+    {        echo '<h2>Votre place est la place n°'.$resaU['num_p'].'.</h2>';    }
+    else
+    {        echo '<h2>Vous n\'avez pas de reservation.</h2>';    }
 
-<div>
+    switch ($rang) {
+        case 0:
+            echo '<h2>Vous n\'êtes pas dans la file d\'attente.</h2>';
+            break;
+        case 1:
+            echo '<h2>Vous êtes 1 er dans la file d\'attente.</h2>';
+            break;
+        default:
+            echo '<h2>Vous êtes '.$rang.' eme dans la file d\'attente.</h2>';
+            break;
+        }
 
-    bouton qui add une resa avec id_u de session , nump aleatoire , met les date automatiquement <br>
-
-    si pas de place alors changer l'etat du mec eet lui attribuer une date de resa <br>
-
-    bouton pour fermer une reservation , donc mettre la date fin = now <br>
-
-    afficher num p en cours <br>
-
-    rang dans la file d'attente <br>
-
-    modifier son mot de passe <br>
-
-    <br>
-    <br>
-
+    if((isset($_SESSION['etat_u'])) && ($_SESSION['etat_u'] == 1)) {
+            echo '<br><br>
     <form action="compte/ajouterResa" method="post">
-        <button type="submit" class="btn btn-outline-primary">Primary</button>
-    </form>
+        <button type="submit" class="btn btn-outline-primary">Réserver une place !</button>
+    </form>' ; } ?>
 
-<?php /*
-$m = 0;
-if($nb > 0) {
-    if($nb == 1) {
-        echo 'Vous avez réservé une place, la voici :'; }
-    else {  echo 'Vous avez reservé des places, les voici :';}
+    <?php if((isset($_SESSION['etat_u'])) && ($_SESSION['etat_u'] == 1 && ($place == false))) {
+            echo '<br><br>
+    <form action="compte/ajouterResa" method="post">
+        <button type="submit" class="btn btn-outline-primary">Prendre une place dans la file d\'attente !</button>
+    </form>' ; } ?>
 
-    echo '
-    <table class="table table-borderless">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Place</th>
-      <th scope="col">Date Résa</th>
-      <th scope="col">Date Début</th>
-      <th scope="col">Date Fin</th>
-      <th scope="col">Temps Restant</th>
-    </tr>
-  </thead>
-  <tbody>' ;
-
-   foreach( $resa as $r )
-  {
-
-      $m += 1;
-      ?><tr>
-      <th scope="row"><?=$m?></th>
-      <td><?=$r['num_p']?></td>
-      <td><?=$r['date_resa']?></td>
-      <td><?=$r['date_debut']?></td>
-      <td><?=$r['date_fin']?></td>
-      <td>A FAIRE</td>
-      </tr><?php
-  }
-      '
-  </tbody>
-</table>
-    ';
-}
-else { echo 'Vous n\'avez pas de réservation en cours.';}
-
-  ?>
-</div>
-<form action="compte/ajouterResa" method="post">
-    <div class="form-group">
-        <label for="nom">Nom de famille</label>
-        <input type="date" class="form-control" id="nom" name="date_debut">
-    </div>
-    <div class="form-group">
-        <label for="nom">Nom de famille</label>
-        <input type="date" class="form-control" id="nom" name="date_fin">
-    </div>
-    <div class="form-group">
-        <label for="prenom">Prenom</label>
-        <input type="text" class="form-control" id="prenom" name="id_p" placeholder="Entrez votre prenom">
-    </div>
-    <div class="form-group">
-        <label for="prenom">Prenom</label>
-        <input type="text" class="form-control" id="prenom" name="id_u" placeholder="Entrez votre prenom">
-    </div>
-    <button type="button" class="btn btn-outline-primary">Primary</button>
-</form>
-
-<?php */
+    <?php if((isset($_SESSION['etat_u'])) && ($_SESSION['etat_u'] == 2)) {
+            echo '<br><br>
+    <form action = "compte/finirResa" method = "post" >
+        <button type = "submit" class="btn btn-outline-danger" > Mettre fin à sa reservation !</button >
+    </form >' ; }
