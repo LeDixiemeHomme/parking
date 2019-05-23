@@ -53,6 +53,10 @@ class ControleurTest extends ControleurSecurise {
 
     public function index()
     {
+        $n = 3;
+        $p = 3;
+        $p *= -1;
+        //$this->place->setIndisponibleOuDisponible(2);
         $places = $this->place->getPlaces();
         $nbPlaces = count($this->place->getPlaces());
         $nbLibres = count($this->place->getPlacesLibres());
@@ -69,7 +73,9 @@ class ControleurTest extends ControleurSecurise {
                 'nbAttentes' => $nbAttentes,
                 'nbIndisponibles' => $nbIndisponibles,
                 'resaCours' => $resaCours,
-                'resaU' => $resaU));
+                'resaU' => $resaU,
+                'p' => $p,
+                'n' =>$n));
     }
 
 }

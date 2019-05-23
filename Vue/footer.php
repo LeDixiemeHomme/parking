@@ -9,7 +9,9 @@
 ?>
 
 <footer>
+    <div class="footer">
     <p>Réalisé par Benoît Valle pour l'épreuve E4</p>
+    </div>
 </footer>
 </div> <!-- #global -->
 

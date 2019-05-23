@@ -14,7 +14,8 @@ class Reservation extends Modele {
     public function getReservations() {
         $sql = 'select id_r, r.id_u, r.id_p, date_resa, date_debut, date_fin, nom, prenom, mail, niveau, etat_u, num_p, etat_p  
                 from reservation r, place p, users u 
-                where u.id_u = r.id_u and p.id_p = r.id_p';
+                where u.id_u = r.id_u and p.id_p = r.id_p
+                order by (id_r)';
         $resa = $this->executerRequete($sql);
         return $resa->fetchAll();
     }
@@ -111,7 +112,7 @@ class Reservation extends Modele {
     public function getReservationEnAttenteByUser($idUser) {
         $sql = 'select id_r, r.id_u, r.id_p, date_resa, date_debut, date_fin, nom, prenom, mail, niveau, etat_u, num_p, etat_p  
                 from reservation r, place p, users u 
-                where u.id_u = r.id_u and p.id_p = r.id_p and r.id_u = ?  and date_debut > NOW() and date_fin > NOW()';
+                where u.id_u = r.id_u and p.id_p = r.id_p and r.id_u = ? and date_debut > NOW() and date_fin > NOW()';
         $resa = $this->executerRequete($sql, array($idUser));
         if ($resa->rowCount() > 0)
             return $resa->fetch();
@@ -151,7 +152,7 @@ class Reservation extends Modele {
     public function getProchainePlaceLibre() {
         $sql = 'select r.id_p, date_resa, date_debut, date_fin 
                 from place p, reservation r 
-                where p.etat_p = 2 and p.id_p = r.id_p
+                where p.etat_p = 2 and p.id_p = r.id_p and date_fin > NOW()
                 order by (date_resa) LIMIT 1';
         $resa = $this->executerRequete($sql);
         if ($resa->rowCount() > 0)

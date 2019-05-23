@@ -12,8 +12,8 @@ html, body {
 }
 
 body {
-    color: #bfbfbf;
-    background: black;
+    color: white;
+    background: gray;
     font-family: 'Futura-Medium', 'Futura', 'Trebuchet MS', sans-serif;
 }
 
@@ -23,7 +23,7 @@ h1, h2 {
 
 #global {
     min-height: 100%;  /* Voir commentaire sur html et body plus haut */
-    background: #333534;
+    background: black;
     width: 70%;
     margin: auto;	/* Permet de centrer la div */
     text-align: justify;
@@ -32,4 +32,8 @@ h1, h2 {
 
 #contenu {
     margin-bottom : 30px;
+}
+
+.footer {
+    margin-bottom: 10px;
 }
