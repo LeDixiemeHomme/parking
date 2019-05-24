@@ -44,12 +44,6 @@ class Place extends Modele {
         return $places->fetchAll();
     }
 
-    public function getPlacesIndisponibles() {
-        $sql = 'select * from place where etat_p = 4';
-        $places = $this->executerRequete($sql);
-        return $places->fetchAll();
-    }
-
     public function getNbPlaces() {
         $sql = 'select count(*) as nbPlaces from place';
         $resultat = $this->executerRequete($sql);
@@ -63,14 +57,10 @@ class Place extends Modele {
         return $places->fetch();
     }
 
-    public function setDisponibleOuIndisponible() {
-        $sql = 'UPDATE place SET etat_p = 1 WHERE etat_p = 4';
-        $place = $this->executerRequete($sql);
-    }
-
-    public function setIndisponibleOuDisponible() {
-        $sql = 'UPDATE place SET etat_p = 4 WHERE etat_p = 1 LIMIT 1';
-        $place = $this->executerRequete($sql);
+    public function getPlacEtat4() {
+            $sql = 'select * from place where etat_p = 4';
+            $places = $this->executerRequete($sql);
+            return $places->fetch();
     }
 
     public function setEtat($etat_p, $id_p) {
@@ -78,14 +68,14 @@ class Place extends Modele {
         $place = $this->executerRequete($sql, array($etat_p, $id_p));
     }
 
-    public function setNum($id_p, $id) {
-        $sql = 'UPDATE place SET num_p = "n°"? where id_p = ?';
-        $place = $this->executerRequete($sql, array($id_p, $id));
+    public function setNum($num_p,$id_p) {
+        $sql = 'UPDATE place SET num_p = ? WHERE id_p = ?';
+        $place = $this->executerRequete($sql, array($num_p, $id_p));
     }
 
-    public function addPlace($etat_p) {
-        $sql = 'insert into place(etat_p) values (?)';
-        $this->executerRequete($sql, array($etat_p));
+    public function addPlace($num_p, $etat_p) {
+        $sql = 'insert into place(num_p, etat_p) values (?,?)';
+        $this->executerRequete($sql, array($num_p, $etat_p));
     }
 
 }

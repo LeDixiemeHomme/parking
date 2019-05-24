@@ -23,16 +23,7 @@ class Utilisateur extends Modele {
         if ($user->rowCount() > 0)
             return $user->fetch();
         else
-            throw new Exception("Aucun utilisateur ne correspond à l'identifiant '$idUser'");
-    }
-
-    public function getMdp($idUser) {
-        $sql = 'select mdp from users where id_u = ?';
-        $user = $this->executerRequete($sql, array($idUser));
-        if ($user->rowCount() > 0)
-            return $user->fetch();
-        else
-            throw new Exception("Aucun utilisateur ne correspond à l'identifiant '$idUser'");
+            throw new Exception("Aucune place ne correspond à l'identifiant '$idUser'");
     }
 
     public function setEtat($etat_u, $id_u){
