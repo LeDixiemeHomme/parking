@@ -13,7 +13,6 @@
 
         <!-- Bootstrap CSS -->
         <!-- Bootstrap core CSS -->
-        <!-- Bootstrap core CSS -->
         <link href="./Vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
         <meta charset="UTF-8" />

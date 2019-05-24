@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ad778458-6614-494d-8805-fd7d0d80db91" name="Default Changelist" comment="" />
+    <list default="true" id="ad778458-6614-494d-8805-fd7d0d80db91" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Controleur/ControleurCompte.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controleur/ControleurCompte.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Vue/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vue/header.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,11 +18,11 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Vue/header.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+            <state relative-caret-position="136">
+              <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -33,11 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Controleur/ControleurCompte.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="464">
-              <caret line="166" column="1" lean-forward="true" selection-start-line="166" selection-start-column="1" selection-end-line="166" selection-end-column="1" />
+            <state relative-caret-position="362">
+              <caret line="160" column="92" selection-start-line="160" selection-start-column="91" selection-end-line="160" selection-end-column="92" />
             </state>
           </provider>
         </entry>
@@ -120,9 +123,9 @@
         <option value="$PROJECT_DIR$/Controleur/ControleurAdmin.php" />
         <option value="$PROJECT_DIR$/../~Parking_BTS/Config/dev.ini" />
         <option value="$PROJECT_DIR$/Config/dev.ini" />
-        <option value="$PROJECT_DIR$/Vue/header.php" />
         <option value="$PROJECT_DIR$/Vue/footer.php" />
         <option value="$PROJECT_DIR$/Controleur/ControleurCompte.php" />
+        <option value="$PROJECT_DIR$/Vue/header.php" />
       </list>
     </option>
   </component>
@@ -153,7 +156,7 @@
             <path>
               <item name="Parking_BTS" type="b2602c69:ProjectViewProjectNode" />
               <item name="Parking_BTS" type="462c0819:PsiDirectoryNode" />
-              <item name="Controleur" type="462c0819:PsiDirectoryNode" />
+              <item name="Vue" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -209,12 +212,12 @@
       <workItem from="1558636976054" duration="15000" />
       <workItem from="1558637073029" duration="10000" />
       <workItem from="1558637310038" duration="5728000" />
-      <workItem from="1558708360774" duration="237000" />
+      <workItem from="1558708360774" duration="1115000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="211756000" />
+    <option name="totallyTimeSpent" value="212604000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -313,20 +316,6 @@
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Vue/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.htaccess">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="96" lean-forward="true" selection-start-line="2" selection-start-column="96" selection-end-line="2" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Config/dev.ini">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -343,8 +332,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Controleur/ControleurCompte.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="166" column="1" lean-forward="true" selection-start-line="166" selection-start-column="1" selection-end-line="166" selection-end-column="1" />
+        <state relative-caret-position="362">
+          <caret line="160" column="92" selection-start-line="160" selection-start-column="91" selection-end-line="160" selection-end-column="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="96" lean-forward="true" selection-start-line="2" selection-start-column="96" selection-end-line="2" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
         </state>
       </provider>
     </entry>
