@@ -5,7 +5,6 @@
  * Date: 06/05/2019
  * Time: 02:56
  */
-
 ?>
 
 <form action="inscription/inscrire" method="post">
@@ -31,4 +30,3 @@
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
-

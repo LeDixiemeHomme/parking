@@ -1,12 +1,10 @@
 <?php $this->titre = "Bloqué";
-
 /**
  * Created by PhpStorm.
  * Utilisateur: benoi
  * Date: 17/04/2019
  * Time: 23:12
  */
-
 ?>
 
 <h1>Bloqué</h1>

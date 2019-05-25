@@ -1,24 +1,19 @@
 <?php
-
 require_once 'Securite/ControleurSecurise.php';
 require 'Modele/Utilisateur.php';
 require 'Modele/Place.php';
 require 'Modele/Reservation.php';
-
 /**
  * Created by PhpStorm.
  * User: benoi
  * Date: 19/04/2019
  * Time: 12:38
  */
-
 class ControleurTest extends ControleurSecurise {
-
     private $users;
     private $place;
     private $reservation;
     private $temps_resa = '2 hours';
-
     public function __construct() {
         $this->users = new Utilisateur();
         $this->place = new Place();
@@ -26,9 +21,7 @@ class ControleurTest extends ControleurSecurise {
         $this->dateNow = new Datetime('now');
         $this->dateFuture = new Datetime('now');
     }
-
     public function ajouterPlace() {
-
         if ($this->requete->existeParametre("nbAjout")) {
             $nbAjout = $this->requete->getParametre("nbAjout");
             $nbPlaces = count($this->place->getPlaces());
@@ -44,15 +37,16 @@ class ControleurTest extends ControleurSecurise {
             }
             else
                 throw new Exception("Ce nombre de place est inférieur au nombre de place réservées.");
-
         }
         else
             throw new Exception("Action impossible : nombre de place non défini.");
-
     }
-
     public function index()
     {
+        $n = 3;
+        $p = 3;
+        $p *= -1;
+        //$this->place->setIndisponibleOuDisponible(2);
         $places = $this->place->getPlaces();
         $nbPlaces = count($this->place->getPlaces());
         $nbLibres = count($this->place->getPlacesLibres());
@@ -69,7 +63,8 @@ class ControleurTest extends ControleurSecurise {
                 'nbAttentes' => $nbAttentes,
                 'nbIndisponibles' => $nbIndisponibles,
                 'resaCours' => $resaCours,
-                'resaU' => $resaU));
+                'resaU' => $resaU,
+                'p' => $p,
+                'n' =>$n));
     }
-
 }

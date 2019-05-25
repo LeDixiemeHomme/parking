@@ -5,9 +5,12 @@
     <list default="true" id="ad778458-6614-494d-8805-fd7d0d80db91" name="Default Changelist" comment="">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/Controleur/ControleurCompte.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controleur/ControleurCompte.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Vue/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vue/header.php" afterDir="false" />
 =======
+=======
+>>>>>>> parent of df91595... boostratp en local
 =======
 >>>>>>> parent of df91595... boostratp en local
       <change beforePath="$PROJECT_DIR$/../../../COURS/INTERNET/bpesquet/auth/MonBlog/Config/dev.ini" beforeDir="false" afterPath="$PROJECT_DIR$/../../../COURS/INTERNET/bpesquet/auth/MonBlog/Config/dev.ini" afterDir="false" />
@@ -16,7 +19,13 @@
       <change beforePath="$PROJECT_DIR$/../../../COURS/INTERNET/bpesquet/auth/MonBlog/Vue/gabarit.php" beforeDir="false" afterPath="$PROJECT_DIR$/../../../COURS/INTERNET/bpesquet/auth/MonBlog/Vue/gabarit.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
 <<<<<<< HEAD
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/Controleur/ControleurAccueil.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controleur/ControleurAccueil.php" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/Contenu/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Contenu/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controleur/ControleurAccueil.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controleur/ControleurAccueil.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controleur/ControleurAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controleur/ControleurAdmin.php" afterDir="false" />
+>>>>>>> parent of df91595... boostratp en local
 =======
       <change beforePath="$PROJECT_DIR$/Contenu/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Contenu/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controleur/ControleurAccueil.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controleur/ControleurAccueil.php" afterDir="false" />
@@ -27,6 +36,7 @@
       <change beforePath="$PROJECT_DIR$/Modele/Place.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modele/Place.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Modele/Reservation.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modele/Reservation.php" afterDir="false" />
 <<<<<<< HEAD
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/Vue/Accueil/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vue/Accueil/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Vue/Compte/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vue/Compte/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Vue/Test/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vue/Test/index.php" afterDir="false" />
@@ -34,12 +44,17 @@
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
 >>>>>>> parent of 02cb801... save avant push sur gitHub
 =======
+=======
+>>>>>>> parent of df91595... boostratp en local
       <change beforePath="$PROJECT_DIR$/Modele/Utilisateur.php" beforeDir="false" afterPath="$PROJECT_DIR$/Modele/Utilisateur.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Vue/Accueil/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vue/Accueil/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Vue/Admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vue/Admin/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Vue/Compte/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vue/Compte/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Vue/Test/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vue/Test/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Vue/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/Vue/footer.php" afterDir="false" />
+<<<<<<< HEAD
+>>>>>>> parent of df91595... boostratp en local
+=======
 >>>>>>> parent of df91595... boostratp en local
     </list>
 =======
@@ -55,6 +70,9 @@
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of df91595... boostratp en local
 =======
 >>>>>>> parent of df91595... boostratp en local
       <file pinned="false" current-in-tab="false">
@@ -91,9 +109,12 @@
         <entry file="file://$PROJECT_DIR$/Modele/Reservation.php">
           <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
+<<<<<<< HEAD
             <state relative-caret-position="187">
               <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
 =======
+=======
+>>>>>>> parent of df91595... boostratp en local
             <state relative-caret-position="170">
               <caret line="17" column="32" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
               <folding>
@@ -127,6 +148,9 @@
                 <element signature="n#isFinies#0;n#Reservation#0;n#!!top" />
                 <element signature="n#tempsRestant#0;n#Reservation#0;n#!!top" />
               </folding>
+<<<<<<< HEAD
+>>>>>>> parent of df91595... boostratp en local
+=======
 >>>>>>> parent of df91595... boostratp en local
             </state>
           </provider>
@@ -134,7 +158,11 @@
       </file>
       <file pinned="false" current-in-tab="false">
 <<<<<<< HEAD
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/Vue/footer.php">
+=======
+        <entry file="file://$PROJECT_DIR$/Modele/Place.php">
+>>>>>>> parent of df91595... boostratp en local
 =======
         <entry file="file://$PROJECT_DIR$/Modele/Place.php">
 >>>>>>> parent of df91595... boostratp en local
@@ -156,6 +184,7 @@
                 <element signature="n#setNum#0;n#Place#0;n#!!top" />
                 <element signature="n#addPlace#0;n#Place#0;n#!!top" />
               </folding>
+<<<<<<< HEAD
             </state>
           </provider>
         </entry>
@@ -165,6 +194,8 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="464">
               <caret line="166" column="1" lean-forward="true" selection-start-line="166" selection-start-column="1" selection-end-line="166" selection-end-column="1" />
+=======
+>>>>>>> parent of df91595... boostratp en local
             </state>
           </provider>
         </entry>
@@ -172,6 +203,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Controleur/ControleurCompte.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
 <<<<<<< HEAD
             <state relative-caret-position="34">
               <caret line="2" column="96" lean-forward="true" selection-start-line="2" selection-start-column="96" selection-end-line="2" selection-end-column="96" />
@@ -183,6 +215,8 @@
               <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
 >>>>>>> parent of 02cb801... save avant push sur gitHub
 =======
+=======
+>>>>>>> parent of df91595... boostratp en local
             <state relative-caret-position="376">
               <caret line="69" column="66" selection-start-line="69" selection-start-column="66" selection-end-line="69" selection-end-column="66" />
               <folding>
@@ -190,12 +224,16 @@
                 <element signature="n#finirResa#0;n#ControleurCompte#0;n#!!top" />
                 <element signature="n#changerMdp#0;n#ControleurCompte#0;n#!!top" />
               </folding>
+<<<<<<< HEAD
+>>>>>>> parent of df91595... boostratp en local
+=======
 >>>>>>> parent of df91595... boostratp en local
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/Config/dev.ini">
@@ -211,11 +249,18 @@
 =======
         <entry file="file://$PROJECT_DIR$/Vue/Compte/index.php">
           <provider selected="true" editor-type-id="text-editor">
+=======
+        <entry file="file://$PROJECT_DIR$/Vue/Compte/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+>>>>>>> parent of df91595... boostratp en local
             <state relative-caret-position="102">
               <caret line="39" column="71" selection-start-line="39" selection-start-column="71" selection-end-line="39" selection-end-column="71" />
               <folding>
                 <element signature="e#36#117#0#PHP" />
               </folding>
+<<<<<<< HEAD
+>>>>>>> parent of df91595... boostratp en local
+=======
 >>>>>>> parent of df91595... boostratp en local
             </state>
           </provider>
@@ -284,6 +329,10 @@
         <option value="$PROJECT_DIR$/Vue/Accueil/index.php" />
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        <option value="$PROJECT_DIR$/Vue/footer.php" />
+>>>>>>> parent of df91595... boostratp en local
 =======
         <option value="$PROJECT_DIR$/Vue/footer.php" />
 >>>>>>> parent of df91595... boostratp en local
@@ -293,6 +342,7 @@
         <option value="$PROJECT_DIR$/Vue/Admin/index.php" />
         <option value="$PROJECT_DIR$/Vue/Compte/index.php" />
         <option value="$PROJECT_DIR$/Controleur/ControleurAdmin.php" />
+<<<<<<< HEAD
 <<<<<<< HEAD
         <option value="$PROJECT_DIR$/../~Parking_BTS/Config/dev.ini" />
         <option value="$PROJECT_DIR$/Config/dev.ini" />
@@ -307,6 +357,8 @@
 >>>>>>> parent of 02cb801... save avant push sur gitHub
 =======
 >>>>>>> parent of acc2502... commit avant revert
+=======
+>>>>>>> parent of df91595... boostratp en local
 =======
 >>>>>>> parent of df91595... boostratp en local
       </list>
@@ -342,7 +394,10 @@
               <item name="Controleur" type="462c0819:PsiDirectoryNode" />
             </path>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of df91595... boostratp en local
             <path>
               <item name="Parking_BTS" type="b2602c69:ProjectViewProjectNode" />
               <item name="Parking_BTS" type="462c0819:PsiDirectoryNode" />
@@ -365,6 +420,9 @@
               <item name="Vue" type="462c0819:PsiDirectoryNode" />
               <item name="Compte" type="462c0819:PsiDirectoryNode" />
             </path>
+<<<<<<< HEAD
+>>>>>>> parent of df91595... boostratp en local
+=======
 >>>>>>> parent of df91595... boostratp en local
           </expand>
           <select />
@@ -415,6 +473,7 @@
 <<<<<<< HEAD
       <workItem from="1558074892359" duration="110748000" />
 <<<<<<< HEAD
+<<<<<<< HEAD
       <workItem from="1558517625555" duration="37726000" />
       <workItem from="1558607944747" duration="7717000" />
       <workItem from="1558636858736" duration="78000" />
@@ -432,10 +491,14 @@
 =======
       <workItem from="1558517625555" duration="36759000" />
 >>>>>>> parent of df91595... boostratp en local
+=======
+      <workItem from="1558517625555" duration="36759000" />
+>>>>>>> parent of df91595... boostratp en local
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -449,6 +512,9 @@
 =======
     <option name="totallyTimeSpent" value="196974000" />
 >>>>>>> parent of df91595... boostratp en local
+=======
+    <option name="totallyTimeSpent" value="196974000" />
+>>>>>>> parent of df91595... boostratp en local
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -457,10 +523,14 @@
       <window_info id="Favorites" order="0" side_tool="true" />
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.18381241" />
 =======
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.19213313" />
 >>>>>>> parent of 02cb801... save avant push sur gitHub
+=======
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.17019667" />
+>>>>>>> parent of df91595... boostratp en local
 =======
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.17019667" />
 >>>>>>> parent of df91595... boostratp en local
@@ -489,8 +559,11 @@
   <component name="editorHistoryManager">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/Vue/gabarit.php" />
 =======
+=======
+>>>>>>> parent of df91595... boostratp en local
 =======
 >>>>>>> parent of df91595... boostratp en local
     <entry file="file://$PROJECT_DIR$/../../../../Java/inscriptionsSportives/InscriptionsSportives/src/hibernate/AccesBDDpackage/AccesBDD.cfg.xml">
@@ -501,6 +574,7 @@
       </provider>
     </entry>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/Contenu/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="461">
@@ -508,6 +582,8 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> parent of df91595... boostratp en local
 =======
 >>>>>>> parent of df91595... boostratp en local
     <entry file="file://$PROJECT_DIR$/../../../COURS/INTERNET/bpesquet/auth/MonBlog/Modele/Commentaire.php">
@@ -536,7 +612,10 @@
       </provider>
     </entry>
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of 02cb801... save avant push sur gitHub
+=======
+>>>>>>> parent of df91595... boostratp en local
 =======
 >>>>>>> parent of df91595... boostratp en local
     <entry file="file://$PROJECT_DIR$/../../../COURS/INTERNET/bpesquet/auth/MonBlog/Modele/Billet.php">
@@ -552,6 +631,7 @@
     <entry file="file://$PROJECT_DIR$/../../../COURS/INTERNET/bpesquet/auth/MonBlog/Modele/Utilisateur.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/Controleur/Securite/ControleurBloqueSecurise.php" />
@@ -570,6 +650,8 @@
     <entry file="file://$PROJECT_DIR$/Framework/Requete.php" />
     <entry file="file://$PROJECT_DIR$/Vue/Utilisateur/index.php" />
 =======
+=======
+>>>>>>> parent of df91595... boostratp en local
     <entry file="file://$PROJECT_DIR$/Controleur/Securite/ControleurBloqueSecurise.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -687,6 +769,9 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+>>>>>>> parent of df91595... boostratp en local
+=======
 >>>>>>> parent of df91595... boostratp en local
     <entry file="file://$PROJECT_DIR$/../../../COURS/INTERNET/bpesquet/auth/MonBlog/Vue/Connexion/index.php">
       <provider selected="true" editor-type-id="text-editor" />
@@ -748,6 +833,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/Vue/Erreur/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -877,6 +963,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.htaccess">
 =======
+=======
+>>>>>>> parent of df91595... boostratp en local
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -924,6 +1012,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Vue/Connection/index.php">
+<<<<<<< HEAD
 >>>>>>> parent of df91595... boostratp en local
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
@@ -1044,11 +1133,171 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="427">
           <caret line="33" column="25" lean-forward="true" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
+=======
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="50" lean-forward="true" selection-start-line="2" selection-start-column="50" selection-end-line="3" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controleur/ControleurConnection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="47" column="58" selection-start-line="47" selection-start-column="53" selection-end-line="47" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Contenu/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="33" column="25" lean-forward="true" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Vue/footer.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="13" column="10" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modele/Utilisateur.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="81" column="47" selection-start-line="81" selection-start-column="47" selection-end-line="81" selection-end-column="47" />
+          <folding>
+            <element signature="n#getUsers#0;n#Utilisateur#0;n#!!top" />
+            <element signature="n#getUser#0;n#Utilisateur#0;n#!!top" />
+            <element signature="n#getMdp#0;n#Utilisateur#0;n#!!top" />
+            <element signature="n#setNiveau#0;n#Utilisateur#0;n#!!top" />
+            <element signature="n#setPrenom#0;n#Utilisateur#0;n#!!top" />
+            <element signature="n#setNom#0;n#Utilisateur#0;n#!!top" />
+            <element signature="n#setMail#0;n#Utilisateur#0;n#!!top" />
+            <element signature="n#setMdp#0;n#Utilisateur#0;n#!!top" />
+            <element signature="n#connecter#0;n#Utilisateur#0;n#!!top" />
+            <element signature="n#inscription#0;n#Utilisateur#0;n#!!top" />
+            <element signature="n#confirmeUser#0;n#Utilisateur#0;n#!!top" />
+            <element signature="n#hacher#0;n#Utilisateur#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue/Accueil/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="461">
+          <caret line="36" column="46" selection-start-line="36" selection-start-column="46" selection-end-line="36" selection-end-column="46" />
+          <folding>
+            <element signature="e#33#121#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controleur/ControleurAccueil.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="53">
+          <caret line="52" column="18" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
+          <folding>
+            <element signature="e#205#293#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modele/Reservation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="17" column="32" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
+          <folding>
+            <element signature="e#136#245#0#PHP" />
+            <element signature="e#620#741#0#PHP" />
+            <element signature="n#getReservation#0;n#Reservation#0;n#!!top" />
+            <element signature="e#1297#1442#0#PHP" />
+            <element signature="n#getReservationsByUser#0;n#Reservation#0;n#!!top" />
+            <element signature="e#2008#2149#0#PHP" />
+            <element signature="n#getReservationsByPlace#0;n#Reservation#0;n#!!top" />
+            <element signature="e#2719#2800#0#PHP" />
+            <element signature="n#getReservationsEnCours#0;n#Reservation#0;n#!!top" />
+            <element signature="n#getReservationEnCoursByUser#0;n#Reservation#0;n#!!top" />
+            <element signature="n#getReservationEnCoursByPlace#0;n#Reservation#0;n#!!top" />
+            <element signature="n#getReservationsEnAttentes#0;n#Reservation#0;n#!!top" />
+            <element signature="n#getReservationEnAttenteByUser#0;n#Reservation#0;n#!!top" />
+            <element signature="n#getReservationEnAttenteByPlace#0;n#Reservation#0;n#!!top" />
+            <element signature="n#getReservationsMouvant#0;n#Reservation#0;n#!!top" />
+            <element signature="e#6271#6338#0#PHP" />
+            <element signature="n#getReservationsFinies#0;n#Reservation#0;n#!!top" />
+            <element signature="n#getListeAttente#0;n#Reservation#0;n#!!top" />
+            <element signature="n#getReservationPlace4#0;n#Reservation#0;n#!!top" />
+            <element signature="n#setDateFin#0;n#Reservation#0;n#!!top" />
+            <element signature="n#setDateDebut#0;n#Reservation#0;n#!!top" />
+            <element signature="n#setDateResa#0;n#Reservation#0;n#!!top" />
+            <element signature="n#setIdUser#0;n#Reservation#0;n#!!top" />
+            <element signature="n#setIdPlace#0;n#Reservation#0;n#!!top" />
+            <element signature="n#addReservation#0;n#Reservation#0;n#!!top" />
+            <element signature="n#isEnAttente#0;n#Reservation#0;n#!!top" />
+            <element signature="n#isEnCours#0;n#Reservation#0;n#!!top" />
+            <element signature="n#isFinies#0;n#Reservation#0;n#!!top" />
+            <element signature="n#tempsRestant#0;n#Reservation#0;n#!!top" />
+          </folding>
+>>>>>>> parent of df91595... boostratp en local
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Modele/Place.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="14" column="35" selection-start-line="14" selection-start-column="35" selection-end-line="14" selection-end-column="35" />
+          <folding>
+            <element signature="e#45#133#0#PHP" />
+            <element signature="n#getPlace#0;n#Place#0;n#!!top" />
+            <element signature="n#getPlacesLibres#0;n#Place#0;n#!!top" />
+            <element signature="n#getPlacesOccupees#0;n#Place#0;n#!!top" />
+            <element signature="n#getPlacesAttentes#0;n#Place#0;n#!!top" />
+            <element signature="n#getPlacesIndisponibles#0;n#Place#0;n#!!top" />
+            <element signature="n#getNbPlaces#0;n#Place#0;n#!!top" />
+            <element signature="n#getPlaceHasard#0;n#Place#0;n#!!top" />
+            <element signature="n#setDisponibleOuIndisponible#0;n#Place#0;n#!!top" />
+            <element signature="n#setIndisponibleOuDisponible#0;n#Place#0;n#!!top" />
+            <element signature="n#setEtat#0;n#Place#0;n#!!top" />
+            <element signature="n#setNum#0;n#Place#0;n#!!top" />
+            <element signature="n#addPlace#0;n#Place#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue/Admin/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-663">
+          <caret line="90" column="118" selection-start-line="90" selection-start-column="118" selection-end-line="90" selection-end-column="118" />
+          <folding>
+            <element signature="e#31#119#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Vue/Compte/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="39" column="71" selection-start-line="39" selection-start-column="71" selection-end-line="39" selection-end-column="71" />
+          <folding>
+            <element signature="e#36#117#0#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controleur/ControleurCompte.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="69" column="66" selection-start-line="69" selection-start-column="66" selection-end-line="69" selection-end-column="66" />
+          <folding>
+            <element signature="n#getValidite#0;n#ControleurCompte#0;n#!!top" />
+            <element signature="n#finirResa#0;n#ControleurCompte#0;n#!!top" />
+            <element signature="n#changerMdp#0;n#ControleurCompte#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controleur/ControleurAdmin.php">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="136">
           <caret line="13" column="10" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
 >>>>>>> parent of df91595... boostratp en local
@@ -1293,6 +1542,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Controleur/ControleurAdmin.php">
       <provider selected="true" editor-type-id="text-editor">
+=======
+>>>>>>> parent of df91595... boostratp en local
         <state relative-caret-position="19">
           <caret line="124" column="46" selection-start-line="124" selection-start-column="46" selection-end-line="124" selection-end-column="46" />
           <folding>
@@ -1304,6 +1555,9 @@
             <element signature="n#ModifierDuree#0;n#ControleurAdmin#0;n#!!top" />
             <element signature="n#donnerPlace#0;n#ControleurAdmin#0;n#!!top" />
           </folding>
+<<<<<<< HEAD
+>>>>>>> parent of df91595... boostratp en local
+=======
 >>>>>>> parent of df91595... boostratp en local
         </state>
       </provider>

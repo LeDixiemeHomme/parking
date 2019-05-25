@@ -1,15 +1,13 @@
 <?php $this->titre = "Accueil";
-
 /**
  * Created by PhpStorm.
  * Utilisateur: benoi
  * Date: 17/04/2019
  * Time: 23:12
  */
-
 ?>
 
-<h1>Accueil</h1>
+    <h1>Accueil</h1>
 
 <?php
 if(isset($_SESSION['connecte'])) {
@@ -33,34 +31,4 @@ if(isset($_SESSION['connecte'])) {
     echo '<br><br>';
 }
 else echo "Vous n'êtes pas connecté. <br> Inscrivez vous ou connectez vous.";
-?>
-
-
-<a href="test">TEST AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</a>
-
-<?php
-
-echo '<br><br>';
-echo'finies';
-echo '<br><br>';
-foreach ($resaf as $r)
-{
-    var_dump($r['id_r']);
-    echo '<br><br>';
-}
-echo '<br><br>';
-echo 'en cours';
-echo '<br><br>';
-foreach ($resac as $r)
-{
-    var_dump($r['id_r']);
-    echo '<br><br>';
-}
-echo '<br><br>';
-echo 'en attente';
-echo '<br><br>';
-foreach ($resaa as $r)
-{
-    var_dump($r['id_r']);
-    echo '<br><br>';
-}
+echo 'Il reste '.$pLibre.' place(s) libre(s)';
