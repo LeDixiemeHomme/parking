@@ -9,17 +9,6 @@
 
 <h1>Admin</h1>
 
-réinitialisation de mdp <br>
-
-consulter liste d'attente <br>
-
-donner une place a un utilisateur <br>
-
-editer liste d'attente
-
-<?= '<br>'; ?>
-<?= '<br>'; ?>
-
 <?= '<br><h2>Panneau de gestion des paramètres :</h2>' ?>
 
 
@@ -44,8 +33,35 @@ editer liste d'attente
 </form>
 
 <?= '<br>'; ?>
-<?php $n = 1; ?>
-<?= '<br><h2>Panneau de gestion des utilisateurs :</h2><br>' ?>
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-7">
+            <h2>Panneau de gestion des utilisateurs :</h2>
+        </div>
+        <div class="col-md-5">
+            <form action="admin" method="post">
+                <div class="form-row ">
+                    <div class="form-group col-md-6">
+                        <button type="submit" class="btn btn-secondary">Trier par</button>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <select name="choix_u" class="form-control">
+                            <option value="5">Tous</option>
+                            <option value="0">Banni</option>
+                            <option value="1">Non approuvé</option>
+                            <option value="2">Approuvé</option>
+                            <option value="3">Admin</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
 
 <table class="table">
     <thead>
@@ -60,8 +76,17 @@ editer liste d'attente
         <th scope="col"></th>
     </tr>
     </thead>
-    <tbody>
-    <?php foreach($users as $user) {
+    <tbody> <?php $u = 0;
+
+if (isset($_POST['choix_u']))
+    $choix_u = $_POST['choix_u'];
+else
+    $choix_u = 5;
+
+foreach($users as $user) {
+
+    if ($choix_u == $user['niveau'] || $choix_u == 5) {
+        $u++;
         echo '        
         <tr>
         <td>'.$user['id_u'].'</td>
@@ -72,9 +97,8 @@ editer liste d'attente
         <td>'.$user['etat_u'].'</td>';
         switch ($user['niveau'])
         {
-            case 0: echo '<td></td>
-                              <form action="admin/gracier" method="post">
-                              <td><button type="submit" value="'.$user['id_u'].'" name="bouton" class="btn btn-primary">Gracier</button></td>
+            case 0: echo '    <form action="admin/gracier" method="post">
+                              <td colspan="2"><button type="submit" value="'.$user['id_u'].'" name="bouton" class="btn btn-primary">Gracier</button></td>
                               </form>';
                 break;
             case 1: echo '<td><form action="admin/approuver" method="post">
@@ -91,16 +115,47 @@ editer liste d'attente
                               <td><button type="submit" value="'.$user['id_u'].'" name="bouton" class="btn btn-danger">Bannir</button></td>
                               </form>';
                 break;
-            default:echo '<td></td><td></td>'; break;
+            default:echo '<td colspan="2"></td>'; break;
+            }
         }
         echo '</tr> ';
-        $n += 1; } ?>
+    }
+    if ($u == 0) {
+        echo 'Aucun utilisateur ne correspond.';
+    }
+    ?>
     </tbody>
 </table>
 
+<?= '<br>'; ?>
 
-<?php $n = 1; ?>
-<?= '<br><h2>Panneau de gestion des réservations :</h2><br>' ?>
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-7">
+            <h2>Panneau de gestion des réservations :</h2>
+        </div>
+        <div class="col-md-5">
+            <form action="admin" method="post">
+                <div class="form-row ">
+                    <div class="form-group col-md-6">
+                        <button type="submit" class="btn btn-secondary">Trier par</button>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <select name="choix_r" class="form-control">
+                            <option value="0">Toutes</option>
+                            <option value="1">En cours</option>
+                            <option value="2">En attente</option>
+                            <option value="3">Terminée</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
 
 <table class="table">
     <thead>
@@ -116,40 +171,66 @@ editer liste d'attente
     </tr>
     </thead>
     <tbody>
-    <?php foreach($reservations as $reservation) {
-        echo '        
-        <tr>
-        <td>'.$reservation['id_r'].'</td>
-        <td>'.$reservation['date_resa'].'</td>
-        <td>'.$reservation['date_debut'].'</td>
-        <td>'.$reservation['date_fin'].'</td>
-        <td>'.$reservation['id_u'].'</td>
-        <td>'.$reservation['id_p'].'</td>';
-        if ($now > $reservation['date_debut'] && $now < $reservation['date_fin'])
-            $val = 1;
-        elseif ($now < $reservation['date_debut'] && $now < $reservation['date_fin'])
-            $val = 2;
-        elseif ($now > $reservation['date_debut'] && $now > $reservation['date_fin'])
-            $val = 0;
-        switch ($val)
-        {
-            case 1: echo '    <td><form action="admin/mettreFin" method="post">
-                              <button type="submit" value="'.$reservation['id_r'].'" name="bouton" class="btn btn-danger">Mettre fin</button>
-                              </form></td><td>Active</td>';
-                break;
-            case 2: echo '
-                              <td></td><td>Attente</td>';
-                break;
-            case 0:echo '<td></td><td>Finie</td>'; break;
+
+    <?php $r = 0;
+
+    foreach($reservations as $reservation) {
+
+        if ($reservation['date_debut'] < $now && $reservation['date_fin'] > $now)
+            $etat = 1;
+        elseif ($reservation['date_debut'] > $now && $reservation['date_fin'] > $now)
+            $etat = 2;
+        elseif ($reservation['date_debut'] < $now && $reservation['date_fin'] < $now)
+            $etat = 3;
+        else
+            $etat = 0;
+
+        if (isset($_POST['choix_r']))
+            $choix_r = $_POST['choix_r'];
+        else
+            $choix_r = 0;
+
+    if ($choix_r == $etat || $choix_r == 0) {
+            $r++;
+            echo '        
+            <tr>
+            <td>' . $reservation['id_r'] . '</td>
+            <td>' . $reservation['date_resa'] . '</td>
+            <td>' . $reservation['date_debut'] . '</td>
+            <td>' . $reservation['date_fin'] . '</td>
+            <td>' . $reservation['id_u'] . '</td>
+            <td>' . $reservation['id_p'] . '</td>';
+            if ($now > $reservation['date_debut'] && $now < $reservation['date_fin'])
+                $val = 1;
+            elseif ($now < $reservation['date_debut'] && $now < $reservation['date_fin'])
+                $val = 2;
+            elseif ($now > $reservation['date_debut'] && $now > $reservation['date_fin'])
+                $val = 0;
+            switch ($val) {
+                case 1:
+                    echo '    <td><form action="admin/mettreFin" method="post">
+                                  <button type="submit" value="' . $reservation['id_r'] . '" name="bouton" class="btn btn-danger">Mettre fin</button>
+                                  </form></td><td>Active</td>';
+                    break;
+                case 2:
+                    echo '
+                                  <td colspan="2">Attente</td>';
+                    break;
+                case 0:
+                    echo '<td colspan="2">Finie</td>';
+                    break;
+            }
         }
         echo '</tr> ';
-        $n += 1; } ?>
+    }
+    if ($r == 0) {
+        echo 'Aucune réservation ne correspond.';
+    }
+    ?>
     </tbody>
 </table>
 
-
 <?= '<br>'; ?>
-<?php $n = 1; ?>
 
 <div class="container">
 
@@ -159,16 +240,18 @@ editer liste d'attente
             <h2>Panneau de gestion des places :</h2>
         </div>
         <div class="col-md-5">
-            <form>
-                <div class="form-row">
-                    <div class="form-group col-md-6" action="admin" method="post">
-                        <button type="submit" name="trierPlaces" class="btn btn-primary">Trier par</button>
+            <form action="admin" method="post">
+                <div class="form-row ">
+                    <div class="form-group col-md-6">
+                        <button type="submit" class="btn btn-secondary">Trier par</button>
                     </div>
                     <div class="form-group col-md-6">
-                        <select class="form-control">
-                            <option value="1">Tous</option>
-                            <option value="4" selected>Disponible</option>
-                            <option value="0">Indisponible</option>
+                        <select name="choix_p" class="form-control">
+                            <option value="0">Toutes</option>
+                            <option value="1">Disponible</option>
+                            <option value="2">Réservée</option>
+                            <option value="3">En attente</option>
+                            <option value="4">Indisponible</option>
                         </select>
                     </div>
                 </div>
@@ -189,40 +272,51 @@ editer liste d'attente
     </tr>
     </thead>
     <tbody>
-    <?php foreach($places as $place) {
-        if ($place['etat_p'] <> 4) {
+
+    <?php $p = 0;
+
+    if (isset($_POST['choix_p']))
+        $choix_p = $_POST['choix_p'];
+    else
+        $choix_p = 0;
+
+    foreach($places as $place) {
+
+        if ($choix_p == $place['etat_p'] || $choix_p == 0) {
+            $p++;
             echo '        
         <tr>
         <td>' . $place['id_p'] . '</td>
         <td>' . $place['num_p'] . '</td>
         <td>' . $place['etat_p'] . '</td>';
-            switch ($place['id_p']) {
-                case 0:
-                    echo '<td></td>
-                              <form action="admin/gracier" method="post">
-                              <td><button type="submit" value="' . $place['id_p'] . '" name="bouton" class="btn btn-primary">indispo</button></td>
-                              </form>';
-                    break;
+            switch ($place['etat_p']) {
                 case 1:
-                    echo '<td><form action="admin/approuver" method="post">
-                              <button type="submit"  value="' . $place['id_p'] . '" name="bouton" class="btn btn-primary">Approuver</button>
-                              </form></td>
-                              <td><form action="admin/bannir" method="post">
-                              <button type="submit" value="' . $place['id_p'] . '" name="bouton" class="btn btn-primary">Bannir</button>
-                              </form></td>';
+                    echo '
+                              <form action="admin/rendreIndisponible" method="post">
+                              <td><button type="submit" value="' . $place['id_p'] . '" name="bouton" class="btn btn-primary">Rendre indisponible</button></td>
+                              </form>';
                     break;
                 case 2:
-                    echo '<td></td>
-                              <form action="admin/bannir" method="post">
-                              <td><button type="submit" value="' . $place['id_p'] . '" name="bouton" class="btn btn-primary">Bannir</button></td>
-                              </form>';
+                    echo '<td colspan="2"></td>';
+                    break;
+                case 3:
+                    echo '<td colspan="2"></td>';
+                    break;
+                case 4:
+                    echo '<form action="admin/rendreDisponible" method="post">
+                          <td colspan="2"><button type="submit" value="' . $place['id_p'] . '" name="bouton" class="btn btn-primary">Rendre disponible</button></td>
+                          </form>';
                     break;
                 default:
-                    echo '<td></td><td></td>';
+                    echo '<td colspan="2"><td/>';
                     break;
             }
         }
         echo '</tr> ';
-        $n += 1; } ?>
+    }
+    if ($p == 0) {
+        echo 'Aucune place ne correspond.';
+    }
+    ?>
     </tbody>
 </table>

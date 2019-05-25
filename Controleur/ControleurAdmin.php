@@ -16,6 +16,7 @@ class ControleurAdmin extends ControleurAdminSecurise
     private $reservation;
     private $place;
     private $duree;
+
     public function __construct()
     {
         $this->users = new Utilisateur();
@@ -25,6 +26,7 @@ class ControleurAdmin extends ControleurAdminSecurise
         $this->dateFuture = new Datetime('now');
         $this->duree = new Duree_reservation();
     }
+
     public function approuver(){
         if ($this->requete->existeParametre("bouton")) {
             $id_u = $this->requete->getParametre("bouton");
@@ -32,6 +34,16 @@ class ControleurAdmin extends ControleurAdminSecurise
         }
         $this->rediriger("admin");
     }
+
+    public function trierPlaces() {
+        if ($this->requete->existeParametre("trierP")) {
+            $id_u = $this->requete->getParametre("trierP");
+            return $id_u;
+        }
+        else throw new Exception("azdazdazdazdadazdazdazdazdazdazdazdazdazdazd");
+
+    }
+
     public function gracier(){
         if ($this->requete->existeParametre("bouton")) {
             $id_u = $this->requete->getParametre("bouton");
@@ -39,6 +51,7 @@ class ControleurAdmin extends ControleurAdminSecurise
         }
         $this->rediriger("admin");
     }
+
     public function bannir(){
         if ($this->requete->existeParametre("bouton")) {
             $id_u = $this->requete->getParametre("bouton");
@@ -46,6 +59,7 @@ class ControleurAdmin extends ControleurAdminSecurise
         }
         $this->rediriger("admin");
     }
+
     public function modificationNombrePlace() {
         if ($this->requete->existeParametre("nb")){
             $nbVoulu = $this->requete->getParametre("nb");
@@ -58,7 +72,7 @@ class ControleurAdmin extends ControleurAdminSecurise
             $placesReservees = $nbPlacesAttentes + $nbPlacesOccupees;
             if( $nbVoulu >= $placesReservees)
             {
-                $this->place->setDisponibleOuIndisponible();
+                $this->place->setDisponibleWHEREIndisponible();
                 if($resultat > 0)
                 {
                     while ($resultat > 0)
@@ -73,7 +87,7 @@ class ControleurAdmin extends ControleurAdminSecurise
                     while ($resultat > 0)
                     {
                         $resultat--;
-                        $this->place->setIndisponibleOuDisponible();
+                        $this->place->setIndisponibleWHEREDisponible();
                     }
                 }
             }
@@ -86,6 +100,7 @@ class ControleurAdmin extends ControleurAdminSecurise
         }
         $this->rediriger("admin");
     }
+
     public function ModifierDuree() {
         if ($this->requete->existeParametre("duree")){
             $duree = intval($this->requete->getParametre("duree"));
@@ -96,6 +111,7 @@ class ControleurAdmin extends ControleurAdminSecurise
         }
         $this->rediriger("admin");
     }
+
     public function mettreFin() {
         if ($this->requete->existeParametre("bouton")) {
             $id_r = $this->requete->getParametre("bouton");
@@ -158,6 +174,7 @@ class ControleurAdmin extends ControleurAdminSecurise
             throw new Exception("Mauvais chemin pour utiliser cette fonction !");
         $this->rediriger("admin");
     }
+
     public function donnerPlace() {
         if ($this->requete->existeParametre("bouton")) {
             $id_u = $this->requete->getParametre("bouton");
@@ -198,8 +215,27 @@ class ControleurAdmin extends ControleurAdminSecurise
             throw new Exception("Mauvais chemin pour utiliser cette fonction !");
         $this->rediriger("admin");
     }
+
+    public function rendreDisponible() {
+        if ($this->requete->existeParametre("bouton")) {
+            $id_p = $this->requete->getParametre("bouton");
+            $this->place->setEtat(1, $id_p);
+        }
+        $this->rediriger("admin");
+    }
+
+    public function rendreIndisponible() {
+        if ($this->requete->existeParametre("bouton")) {
+            $id_p = $this->requete->getParametre("bouton");
+            $this->place->setEtat(4, $id_p);
+        }
+        $this->rediriger("admin");
+    }
+
     public function index()
     {
+
+
         //requis
         $now = $this->dateNow->format('Y-m-d H:i:s');
         $duree_format = substr($this->duree->getDuree()['duree'], 2, strlen($this->duree->getDuree()['duree']) - 3);
@@ -217,3 +253,4 @@ class ControleurAdmin extends ControleurAdminSecurise
             'now' => $now));
     }
 }
+

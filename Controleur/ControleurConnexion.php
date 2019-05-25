@@ -7,7 +7,7 @@ require_once 'Modele/Utilisateur.php';
  * Date: 17/04/2019
  * Time: 23:12
  */
-class ControleurConnection extends Controleur
+class ControleurConnexion extends Controleur
 {
     private $utilisateur;
     public function __construct()

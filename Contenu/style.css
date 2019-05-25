@@ -28,6 +28,7 @@ h1, h2 {
     margin: auto;	/* Permet de centrer la div */
     text-align: justify;
     padding: 5px 20px;
+    color: white;
 }
 
 #contenu {

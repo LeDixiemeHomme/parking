@@ -35,9 +35,9 @@ abstract class Modele
     }
 
     /**
-     * Renvoie un objet de connection à la BDD en initialisant la connection au besoin
+     * Renvoie un objet de connexion à la BDD en initialisant la connexion au besoin
      * 
-     * @return PDO Objet PDO de connection à la BDD
+     * @return PDO Objet PDO de connexion à la BDD
      */
     private static function getBdd()
     {
@@ -46,7 +46,7 @@ abstract class Modele
             $dsn = Configuration::get("dsn");
             $login = Configuration::get("login");
             $mdp = Configuration::get("mdp");
-            // Création de la connection
+            // Création de la connexion
             self::$bdd = new PDO($dsn, $login, $mdp,
                     array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
         }

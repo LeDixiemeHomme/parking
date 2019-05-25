@@ -41,12 +41,12 @@
                                     echo '<li class="nav-item"><a class="nav-link" href="compte">Compte</a></li>'; break;
                             default:echo '<li class="nav-item"><a class="nav-link" href="bloque">Compte bloqué</a></li>'; break;
                         }
-                        echo '<li class="nav-item"><a class="nav-link" href="connection/deconnecter">Se déconnecter</a></li>';
+                        echo '<li class="nav-item"><a class="nav-link" href="connexion/deconnecter">Se déconnecter</a></li>';
                     }
                     else
                     {
                         echo '
-                        <li class="nav-item"><a class="nav-link" href="connection">Se connecter</a></li>
+                        <li class="nav-item"><a class="nav-link" href="connexion">Se connecter</a></li>
                         <li class="nav-item"><a class="nav-link" href="inscription">S\'inscrire</a></li>
                         '; } ?>
                 </div>

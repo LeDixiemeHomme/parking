@@ -25,10 +25,10 @@ if(isset($_SESSION['connecte'])) {
             echo "Compte administrateur.";
             break;
         case NULL:
-            echo "Vous n'êtes pas connecté. <br> Inscrivez vous ou connectez vous.";
+            echo "Vous n'êtes pas connecté. <br> Inscrivez vous ou connectez vous.<br><br>";
             break;
     }
     echo '<br><br>';
 }
-else echo "Vous n'êtes pas connecté. <br> Inscrivez vous ou connectez vous.";
+else echo "Vous n'êtes pas connecté. <br> Inscrivez vous ou connectez vous.<br><br>";
 echo 'Il reste '.$pLibre.' place(s) libre(s)';

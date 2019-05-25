@@ -64,7 +64,10 @@ class ControleurCompte extends ControleurSecurise
             else throw new Exception("Le file d'attente est pleine");
         }
         else throw new Exception("Vous avez deja une place !");
+
+        $this->rediriger("compte");
     }
+
     public function finirResa(){
         if($_SESSION['etat_u'] == 2) {
             //$resaPartant est la resa du mec qui clique pour finir sa reservation
@@ -125,7 +128,7 @@ class ControleurCompte extends ControleurSecurise
             $mail = $this->requete->getParametre("mail");
             if($userTrouve = $this->users->confirmeUser($mail, $ANmdp))
             {
-                $this->users->setMdp($NVmdp, $userTrouve);
+                $this->users->setMdp($NVmdp, $userTrouve['id_u']);
             }
             else
                 throw new Exception("Aucune correspondance avec les éléments de la base de données trouvée !");
@@ -140,7 +143,7 @@ class ControleurCompte extends ControleurSecurise
         $placeO = $this->place->getPlacesOccupees();
         $users = $this->users->getUser($_SESSION['id_u']);
         $resaUser = $this->reservation->getReservationEnCoursByUser($_SESSION['id_u']);
-        $placeattente = $this->reservation->getReservationsMouvant($resaUser['date_resa']);
+        //$placeattente = $this->reservation->getReservationsMouvant($resaUser['date_resa']);
         $resaUAttente = $this->reservation->getReservationEnAttenteByUser($_SESSION['id_u']);
         $rang = count($this->reservation->getReservationsMouvant($resaUAttente['date_resa']));
         $this->genererVue(array('users' => $users, 'placeL' => $placeL, 'placeO' => $placeO, 'resaU' => $resaUser, 'rang' => $rang));

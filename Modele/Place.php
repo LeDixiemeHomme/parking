@@ -63,12 +63,12 @@ class Place extends Modele {
         return $places->fetch();
     }
 
-    public function setDisponibleOuIndisponible() {
+    public function setDisponibleWHEREIndisponible() {
         $sql = 'UPDATE place SET etat_p = 1 WHERE etat_p = 4';
         $place = $this->executerRequete($sql);
     }
 
-    public function setIndisponibleOuDisponible() {
+    public function setIndisponibleWHEREDisponible() {
         $sql = 'UPDATE place SET etat_p = 4 WHERE etat_p = 1 LIMIT 1';
         $place = $this->executerRequete($sql);
     }
