@@ -9,7 +9,7 @@
 ?>
 
 <footer>
-    <p>Réalisé par Benoît Valle pour l'épreuve E4</p>
+    <p class="p-footer">Réalisé par Benoît Valle pour l'épreuve E4 du BTS SIO session 2019</p>
 </footer>
 </div> <!-- #global -->
 
@@ -21,4 +21,3 @@
 </div> <!-- container-fluid -->
 </body>
 </html>
-

@@ -5,10 +5,16 @@
  * Date: 17/04/2019
  * Time: 23:12
  */
-?>
 
-    <h1>Accueil</h1>
+function afficherS($valeur) {
+    if ($valeur > 1)
+        $s = 's';
+    else
+        $s = '';
+    return $s;
+}?>
 
+<p class="p-accueil-1">
 <?php
 if(isset($_SESSION['connecte'])) {
     switch ($niv) {
@@ -25,10 +31,13 @@ if(isset($_SESSION['connecte'])) {
             echo "Compte administrateur.";
             break;
         case NULL:
-            echo "Vous n'êtes pas connecté. <br> Inscrivez vous ou connectez vous.<br><br>";
+            echo "Vous n'êtes pas connecté. <br> Inscrivez vous ou connectez vous.<br>";
             break;
     }
-    echo '<br><br>';
+    echo '<br>';
 }
-else echo "Vous n'êtes pas connecté. <br> Inscrivez vous ou connectez vous.<br><br>";
-echo 'Il reste '.$pLibre.' place(s) libre(s)';
+else echo "Vous n'êtes pas connecté. <br> Inscrivez vous ou connectez vous.<br>";
+?>
+</p>
+
+<p class="p-accueil-1">Il reste <?=$pLibre?> place<?=afficherS($pLibre)?> libre<?=afficherS($pLibre)?></p>

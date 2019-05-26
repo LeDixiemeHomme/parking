@@ -23,6 +23,7 @@ class ControleurAccueil extends Controleur {
     }
     public function index()
     {
+        //Système de mise à jour de l'état des places
         $ALL_RESA_FINIES = $this->reservation->getReservationsFinies();
         $ALL_RESA_EN_COURS = $this->reservation->getReservationsEnCours();
         $ALL_RESA_ATTENTES = $this->reservation->getReservationsEnAttentes();
@@ -56,6 +57,7 @@ class ControleurAccueil extends Controleur {
                     }}
             }
         }
+
         if(isset($_SESSION['id_u'])) {
             $users = $this->users->getUser($_SESSION['id_u']);
         }

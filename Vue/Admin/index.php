@@ -5,16 +5,19 @@
  * Date: 17/04/2019
  * Time: 23:12
  */
-?>
 
-<h1>Admin</h1>
+function afficherS($valeur) {
+    if ($valeur > 1)
+        $s = 's';
+    else
+        $s = '';
+    return $s;
+}?>
 
-<?= '<br><h2>Panneau de gestion des paramètres :</h2>' ?>
+<p class="p-admin">Panneau de gestion des paramètres :</p>
 
-
-<?= '<br><p>Gestion du nombres des places :</p>' ?>
-<?= '<p>Nombre de places actives : '.$placeDispo.'</p>' ?>
-
+<p class="p-admin-1">Gestion du nombres des places :</p>
+<p>Nombre de places actives : <?=$placeDispo?> place<?= afficherS($placeDispo)?>.</p>
 <form class="form-inline" action="admin/modificationNombrePlace" method="post">
     <div class="form-group mx-sm-3 mb-2">
         <input type="text" name="nb" class="form-control">
@@ -22,8 +25,8 @@
     <button type="submit" class="btn btn-primary mb-2">Changer nombre de place</button>
 </form>
 
-<?= '<br><p>Gestion du temps d\'une reservation :</p>' ?>
-<?= '<p> Durée actuelle des réservations : '.$dfo.' heure(s).</p>' ?>
+<p class="p-admin-1">Gestion du temps d'une reservation :</p>
+<p> Durée actuelle des réservations : <?=$dfo?> heure<?php echo afficherS($dfo);?>.</p>
 
 <form class="form-inline" action="admin/ModifierDuree" method="post">
     <div class="form-group mx-sm-3 mb-2">
@@ -32,8 +35,7 @@
     <button type="submit" class="btn btn-primary mb-2">Changer la durée des réservations</button>
 </form>
 
-<?= '<br>'; ?>
-
+<div class="t-admin-trier">
 <div class="container">
 
     <div class="row">
@@ -62,7 +64,9 @@
     </div>
 
 </div>
+</div>
 
+<div class="tableau">
 <table class="table">
     <thead>
     <tr>
@@ -126,9 +130,10 @@ foreach($users as $user) {
     ?>
     </tbody>
 </table>
+</div>
 
-<?= '<br>'; ?>
 
+<div class="t-admin-trier">
 <div class="container">
 
     <div class="row">
@@ -156,7 +161,8 @@ foreach($users as $user) {
     </div>
 
 </div>
-
+</div>
+<div class="tableau">
 <table class="table">
     <thead>
     <tr>
@@ -213,11 +219,10 @@ foreach($users as $user) {
                                   </form></td><td>Active</td>';
                     break;
                 case 2:
-                    echo '
-                                  <td colspan="2">Attente</td>';
+                    echo '<td></td><td>Attente</td>';
                     break;
                 case 0:
-                    echo '<td colspan="2">Finie</td>';
+                    echo '<td></td><td>Finie</td>';
                     break;
             }
         }
@@ -229,9 +234,10 @@ foreach($users as $user) {
     ?>
     </tbody>
 </table>
+</div>
 
-<?= '<br>'; ?>
 
+<div class="t-admin-trier">
 <div class="container">
 
     <div class="row">
@@ -260,7 +266,8 @@ foreach($users as $user) {
     </div>
 
 </div>
-
+</div>
+<div class="tableau">
 <table class="table">
     <thead>
     <tr>
@@ -293,7 +300,7 @@ foreach($users as $user) {
                 case 1:
                     echo '
                               <form action="admin/rendreIndisponible" method="post">
-                              <td><button type="submit" value="' . $place['id_p'] . '" name="bouton" class="btn btn-primary">Rendre indisponible</button></td>
+                              <td colspan="2"><button type="submit" value="' . $place['id_p'] . '" name="bouton" class="btn btn-danger btn-sm">Rendre indisponible</button></td>
                               </form>';
                     break;
                 case 2:
@@ -304,7 +311,7 @@ foreach($users as $user) {
                     break;
                 case 4:
                     echo '<form action="admin/rendreDisponible" method="post">
-                          <td colspan="2"><button type="submit" value="' . $place['id_p'] . '" name="bouton" class="btn btn-primary">Rendre disponible</button></td>
+                          <td colspan="2"><button type="submit" value="' . $place['id_p'] . '" name="bouton" class="btn btn-success btn-sm">Rendre disponible</button></td>
                           </form>';
                     break;
                 default:
@@ -320,3 +327,4 @@ foreach($users as $user) {
     ?>
     </tbody>
 </table>
+</div>

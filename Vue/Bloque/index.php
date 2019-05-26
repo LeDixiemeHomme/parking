@@ -7,8 +7,6 @@
  */
 ?>
 
-<h1>Bloqué</h1>
-
 <h2>Vous avez été bloqué !</h2>
 
 <br>

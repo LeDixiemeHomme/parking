@@ -5,12 +5,10 @@ html, body {
 
 body {
     color: white;
-    background: gray;
+    background-image: url("../image/parking-fond.jpg");
     font-family: 'Futura-Medium', 'Futura', 'Trebuchet MS', sans-serif;
-}
-
-h1, h2 {
-    color: white;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 form, .table {
@@ -18,10 +16,10 @@ form, .table {
 }
 
 #global {
-    min-height: 100%;  /* Voir commentaire sur html et body plus haut */
+    min-height: 100%;
     background: black;
     width: 80%;
-    margin: auto;	/* Permet de centrer la div */
+    margin: auto;
     text-align: justify;
     padding: 5px 20px;
     color: white;
@@ -31,6 +29,71 @@ form, .table {
     margin-bottom : 30px;
 }
 
+.titre {
+    padding-bottom: 15px;
+}
+
 .footer {
     margin-bottom: 10px;
+}
+
+.p-accueil-1 {
+    font-size: 28px;
+    color: red;
+}
+
+.p-footer {
+    font-size: 15px;
+    text-align: center;
+    padding-top: 5px;
+}
+
+.h1-header {
+    text-align: center;
+    margin-top: 10px;
+    color: white;
+}
+
+.p-compte-1 {
+    text-align: center;
+    font-size: 25px;
+}
+
+.p-compte-2 {
+    text-align: center;
+    font-size: 20px;
+}
+
+.p-compte-place {
+    padding-top: 10px;
+    font-size: 25px;
+    color: red;
+}
+
+.button-resa {
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+.form-compte {
+    padding-top: 20px;
+    text-align: center;
+}
+
+.p-admin {
+    font-size: 35px;
+}
+
+.p-admin-1 {
+    font-size: 25px;
+    padding-top: 12px;
+}
+
+.t-admin-trier {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.tableau {
+    padding-bottom: 0px;
 }

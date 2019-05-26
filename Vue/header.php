@@ -53,7 +53,10 @@
                 </div>
             </nav>
 
-            <a href=""><h1>Site de gestion de parking</h1></a>
+            <a href=""><h1 class="h1-header">Site de gestion de parking</h1></a>
+
+
+        <h2 class="titre"><?= $this->titre ?></h2>
 
     </header>
 

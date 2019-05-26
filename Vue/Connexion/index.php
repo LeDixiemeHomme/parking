@@ -16,6 +16,8 @@
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 
+<p><br>Mail de l'admin = admin@admin<br>Mdp de l'admin = admin</p>
+
 <?php if (isset($msgErreur)): ?>
     <p><?= $msgErreur ?></p>
 <?php endif; ?>
