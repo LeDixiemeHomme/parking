@@ -293,7 +293,7 @@ foreach($users as $user) {
                 case 1:
                     echo '
                               <form action="admin/rendreIndisponible" method="post">
-                              <td><button type="submit" value="' . $place['id_p'] . '" name="bouton" class="btn btn-success">Rendre indisponible</button></td>
+                              <td><button type="submit" value="' . $place['id_p'] . '" name="bouton" class="btn btn-primary">Rendre indisponible</button></td>
                               </form>';
                     break;
                 case 2:
@@ -304,7 +304,7 @@ foreach($users as $user) {
                     break;
                 case 4:
                     echo '<form action="admin/rendreDisponible" method="post">
-                          <td colspan="2"><button type="submit" value="' . $place['id_p'] . '" name="bouton" class="btn btn-danger">Rendre disponible</button></td>
+                          <td colspan="2"><button type="submit" value="' . $place['id_p'] . '" name="bouton" class="btn btn-primary">Rendre disponible</button></td>
                           </form>';
                     break;
                 default:
