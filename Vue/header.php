@@ -20,6 +20,7 @@
         <title><?= $titre ?></title>
 </head>
 <body>
+<div class="container-fluid">
 <div id="global">
     <header>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
