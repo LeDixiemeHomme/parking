@@ -13,18 +13,12 @@ html, body {
 
 body {
     color: white;
-    background-image: url("../image/image_parking.jpg");
-    background-size: cover;
-    background-attachment: fixed;
+    background: gray;
     font-family: 'Futura-Medium', 'Futura', 'Trebuchet MS', sans-serif;
 }
 
 h1, h2 {
     color: white;
-}
-
-form, table {
-    color: white !important;
 }
 
 #global {
