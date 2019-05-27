@@ -38,7 +38,7 @@ class ControleurCompte extends ControleurSecurise
             if($nblibre)
             {
                 $place = $this->place->getPlaceHasard();
-                $this->dateFuture->add(new DateInterval('PT2H'));
+                $this->dateFuture->add(new DateInterval($this->duree->getDuree()['duree']));
                 $date_debut = $this->dateNow->format('Y-m-d H:i:s');
                 $date_fin = $this->dateFuture->format('Y-m-d H:i:s');
                 $this->reservation->addReservation($date_debut, $date_fin, $_SESSION['id_u'], $place['id_p']);
@@ -52,7 +52,7 @@ class ControleurCompte extends ControleurSecurise
                 $place = $this->reservation->getProchainePlaceLibre();
                 $this->dateNow = new Datetime($place['date_fin']);
                 $this->dateFuture = new Datetime($place['date_fin']);
-                $this->dateFuture->add(new DateInterval('PT2H'));
+                $this->dateFuture->add(new DateInterval($this->duree->getDuree()['duree']));
                 $date_debut = $this->dateNow->format('Y-m-d H:i:s');
                 $date_fin = $this->dateFuture->format('Y-m-d H:i:s');
                 $this->reservation->addReservation($date_debut, $date_fin, $_SESSION['id_u'], $place['id_p']);
@@ -92,7 +92,7 @@ class ControleurCompte extends ControleurSecurise
                 //met la date_r a la resa du premier de la liste d'attente
                 $this->reservation->setDateDebut($date_r, $resaPremierListeAttente['id_r']);
                 //creation d'une date date_2 = now() + duree
-                $this->dateFuture->add(new DateInterval('PT2H'));
+                $this->dateFuture->add(new DateInterval($this->duree->getDuree()['duree']));
                 $date_fin = $this->dateFuture->format('Y-m-d H:i:s');
                 $this->reservation->setDateFin($date_fin, $resaPremierListeAttente['id_r']);
                 //met l'etat_u du premier de la liste a 2
@@ -139,6 +139,8 @@ class ControleurCompte extends ControleurSecurise
     }
     public function index()
     {
+
+        //requis
         $placeL = $this->place->getPlacesLibres();
         $placeO = $this->place->getPlacesOccupees();
         $users = $this->users->getUser($_SESSION['id_u']);
@@ -146,6 +148,10 @@ class ControleurCompte extends ControleurSecurise
         //$placeattente = $this->reservation->getReservationsMouvant($resaUser['date_resa']);
         $resaUAttente = $this->reservation->getReservationEnAttenteByUser($_SESSION['id_u']);
         $rang = count($this->reservation->getReservationsMouvant($resaUAttente['date_resa']));
-        $this->genererVue(array('users' => $users, 'placeL' => $placeL, 'placeO' => $placeO, 'resaU' => $resaUser, 'rang' => $rang));
+        $this->genererVue(array('users' => $users,
+            'placeL' => $placeL,
+            'placeO' => $placeO,
+            'resaU' => $resaUser,
+            'rang' => $rang));
     }
 }

@@ -141,7 +141,7 @@ class ControleurAdmin extends ControleurAdminSecurise
                     //met la date_r a la resa du premier de la liste d'attente
                     $this->reservation->setDateDebut($date_r, $resaPremierListeAttente['id_r']);
                     //creation d'une date date_2 = now() + duree
-                    $this->dateFuture->add(new DateInterval('PT2H'));
+                    $this->dateFuture->add(new DateInterval($this->duree->getDuree()['duree']));
                     $date_fin = $this->dateFuture->format('Y-m-d H:i:s');
                     $this->reservation->setDateFin($date_fin, $resaPremierListeAttente['id_r']);
                     //met l'etat_u du premier de la liste a 2
@@ -185,7 +185,7 @@ class ControleurAdmin extends ControleurAdminSecurise
                 if($nblibre)
                 {
                     $place = $this->place->getPlaceHasard();
-                    $this->dateFuture->add(new DateInterval('PT2H'));
+                    $this->dateFuture->add(new DateInterval($this->duree->getDuree()['duree']));
                     $date_debut = $this->dateNow->format('Y-m-d H:i:s');
                     $date_fin = $this->dateFuture->format('Y-m-d H:i:s');
                     $this->reservation->addReservation($date_debut, $date_fin, $user['id_u'], $place['id_p']);
@@ -199,7 +199,7 @@ class ControleurAdmin extends ControleurAdminSecurise
                     $place = $this->reservation->getProchainePlaceLibre();
                     $this->dateNow = new Datetime($place['date_fin']);
                     $this->dateFuture = new Datetime($place['date_fin']);
-                    $this->dateFuture->add(new DateInterval('PT2H'));
+                    $this->dateFuture->add(new DateInterval($this->duree->getDuree()['duree']));
                     $date_debut = $this->dateNow->format('Y-m-d H:i:s');
                     $date_fin = $this->dateFuture->format('Y-m-d H:i:s');
                     $this->reservation->addReservation($date_debut, $date_fin, $user['id_u'], $place['id_p']);
