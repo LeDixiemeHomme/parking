@@ -147,11 +147,18 @@ class ControleurCompte extends ControleurSecurise
         $resaUser = $this->reservation->getReservationEnCoursByUser($_SESSION['id_u']);
         //$placeattente = $this->reservation->getReservationsMouvant($resaUser['date_resa']);
         $resaUAttente = $this->reservation->getReservationEnAttenteByUser($_SESSION['id_u']);
-        $rang = count($this->reservation->getReservationsMouvant($resaUAttente['date_resa']));
+
+        $test = $this->reservation->getReservationsMouvant($resaUAttente['date_resa']);
+
+        if (null !== $this->reservation->getReservationsMouvant($resaUAttente['date_resa']))
+            $rang = count($this->reservation->getReservationsMouvant($resaUAttente['date_resa']));
+        else
+            $rang = 0;
         $this->genererVue(array('users' => $users,
             'placeL' => $placeL,
             'placeO' => $placeO,
             'resaU' => $resaUser,
-            'rang' => $rang));
+            'rang' => $rang,
+            'test' => $test));
     }
 }
